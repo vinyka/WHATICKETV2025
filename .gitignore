@@ -9,8 +9,9 @@ backend copy/
 **/build/
 
 # Ignorar archivos de entorno
-**/.env
-**/.env.*
+.env
+.env.*
+!.env.example
 
 # Ignorar archivos comprimidos y temporales
 *.zip

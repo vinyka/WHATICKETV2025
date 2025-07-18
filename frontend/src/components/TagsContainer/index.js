@@ -107,7 +107,7 @@ export function TagsContainer({ ticket }) {
                     ))
                 }
                 renderInput={(params) => (
-                    <TextField {...params} variant="outlined" placeholder="Tags" />
+                    <TextField {...params} variant="outlined" placeholder="Etiquetas" />
                 )}
                 PaperComponent={({ children }) => (
                     <Paper style={{ width: 400, marginLeft: 12 }}>

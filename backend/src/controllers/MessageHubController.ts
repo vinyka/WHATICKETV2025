@@ -22,13 +22,13 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
 
   const { companyId } = req.user;
 
-  console.log('CompanyId do usuário autenticado:', companyId);  // Verifique se companyId está correto aqui
+  console.log('CompanyId usuario autenticado:', companyId);  // Verifique se companyId está correto aqui
   
   const { body: message } = req.body;
   const { ticketId } = req.params;
   const medias = req.files as Express.Multer.File[];
 
-  console.log("sending hub message controller");
+  console.log("controlador de mensajes del concentrador de envío");
 
   const ticket = await Ticket.findOne({
     where: { id: ticketId, companyId }, // Filtro pelo companyId
@@ -47,7 +47,7 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
   });
 
   if (!ticket) {
-    return res.status(404).json({ message: "Ticket not found" });
+    return res.status(404).json({ message: "Chat no encontrado" });
   }
 
   try {
@@ -74,7 +74,7 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
       );
     }
 
-    return res.status(200).json({ message: "Message sent" });
+    return res.status(200).json({ message: "Mensaje enviado" });
   } catch (error) {
     console.log(error);
 

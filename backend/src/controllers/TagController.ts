@@ -103,7 +103,7 @@ export const remove = async (
     tagId
   });
 
-  return res.status(200).json({ message: "Tag deleted" });
+  return res.status(200).json({ message: "Etiqueta eliminada" });
 };
 
 export const list = async (req: Request, res: Response): Promise<Response> => {

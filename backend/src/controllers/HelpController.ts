@@ -118,7 +118,7 @@ export const remove = async (
     id
   });
 
-  return res.status(200).json({ message: "Help deleted" });
+  return res.status(200).json({ message: "Ayuda eliminada" });
 };
 
 export const findList = async (

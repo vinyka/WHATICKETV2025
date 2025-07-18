@@ -63,11 +63,11 @@ const toastError = err => {
         
         return;
     } else {
-        console.error("An error occurred!");
+        console.error("¡Ocurrió un error!");
         // Optionally log the error to an external service here
         
-        toast.error("An error occurred!", {
-            toastId: "An error occurred!",
+        toast.error("¡Ocurrió un error!", {
+            toastId: "¡Ocurrió un error!",
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,

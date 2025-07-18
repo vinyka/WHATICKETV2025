@@ -46,7 +46,7 @@ export const mediaUpload = async (
       mediaName: file.originalname
     });
 
-    return res.send({ mensagem: "Arquivo Salvo" });
+    return res.send({ mensagem: "Archivo guardado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }
@@ -69,7 +69,7 @@ export const deleteMedia = async (
     queue.mediaPath = null;
     queue.mediaName = null;
     await queue.save();
-    return res.send({ mensagem: "Arquivo excluído" });
+    return res.send({ mensagem: "archivo eliminado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }

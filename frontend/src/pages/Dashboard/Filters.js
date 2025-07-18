@@ -50,7 +50,7 @@ const Filters = ({
                                 onChange={(e) => setQueues(e.target.value)}
                             >
                                 <MenuItem value={false}>
-                                    Todos os Departamentos
+                                    Todo Departamentos
                                 </MenuItem>
                                 {user.queues.map((queue) => (
                                     <MenuItem key={queue.id} value={queue.id}>
@@ -78,7 +78,7 @@ const Filters = ({
                         <TextField
                             fullWidth
                             name="dateEnd"
-                            label="Até"
+                            label="Hasta"
                             InputLabelProps={{
                                 shrink: true,
                             }}

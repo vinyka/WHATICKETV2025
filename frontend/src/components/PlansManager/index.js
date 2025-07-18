@@ -148,7 +148,7 @@ export function PlanManagerForm(props) {
                         <Grid xs={12} sm={6} md={1} item>
                             <Field
                                 as={TextField}
-                                label="Filas"
+                                label="Departamentos"
                                 name="queues"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -161,7 +161,7 @@ export function PlanManagerForm(props) {
                         <Grid xs={12} sm={6} md={1} item>
                             <Field
                                 as={TextField}
-                                label="Valor"
+                                label="Precio"
                                 name="value"
                                 variant="outlined"
                                 className={classes.fullWidth}
@@ -267,7 +267,7 @@ export function PlanManagerForm(props) {
                                 <Field
                                     as={Select}
                                     id="useOpenAi-selection"
-                                    label="Talk.Ai"
+                                    label="Open.Ai"
                                     labelId="useOpenAi-selection-label"
                                     name="useOpenAi"
                                     margin="dense"
@@ -281,11 +281,11 @@ export function PlanManagerForm(props) {
                         {/* INTEGRACOES */}
                         <Grid xs={12} sm={8} md={2} item>
                             <FormControl margin="dense" variant="outlined" fullWidth>
-                                <InputLabel htmlFor="useIntegrations-selection">Integrações</InputLabel>
+                                <InputLabel htmlFor="useIntegrations-selection">Integraciones</InputLabel>
                                 <Field
                                     as={Select}
                                     id="useIntegrations-selection"
-                                    label="Integrações"
+                                    label="Integraciones"
                                     labelId="useIntegrations-selection-label"
                                     name="useIntegrations"
                                     margin="dense"
@@ -307,8 +307,8 @@ export function PlanManagerForm(props) {
                                     name="useInternal"
                                     margin="dense"
                                 >
-                                    <MenuItem value={false}>Sim</MenuItem>
-                                    <MenuItem value={true}>Não</MenuItem>
+                                    <MenuItem value={false}>Sí</MenuItem>
+                                    <MenuItem value={true}>No</MenuItem>
                                 </Field>
                             </FormControl>
                         </Grid>
@@ -373,7 +373,7 @@ export function PlansManagerGrid(props) {
     };
 
     const renderInternal = (row) => {
-        return row.useInternal === false ? "Sim" : "Não";
+        return row.useInternal === false ? "Si" : "No";
     };
 
     return (
@@ -398,8 +398,8 @@ export function PlansManagerGrid(props) {
                         <TableCell align="center">API Externa</TableCell>
                         <TableCell align="center">Kanban</TableCell>
                         <TableCell align="center">Open.Ai</TableCell>
-                        <TableCell align="center">Integrações</TableCell>
-						<TableCell align="center">Plano Interno</TableCell>
+                        <TableCell align="center">Integraciones</TableCell>
+						<TableCell align="center">Plan Interno</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -468,7 +468,7 @@ export default function PlansManager() {
             const planList = await list()
             setRecords(planList)
         } catch (e) {
-            toast.error('Não foi possível carregar a lista de registros')
+            toast.error('No se puede cargar la lista de registros')
         }
         setLoading(false)
     }
@@ -484,9 +484,9 @@ export default function PlansManager() {
             }
             await loadPlans()
             handleCancel()
-            toast.success('Operação realizada com sucesso!')
+            toast.success('¡Operación completada con éxito!')
         } catch (e) {
-            toast.error('Não foi possível realizar a operação. Verifique se já existe uma plano com o mesmo nome ou se os campos foram preenchidos corretamente')
+            toast.error('No se pudo realizar la operación. Comprueba si ya existe un plan con el mismo nombre o si los campos se han rellenado correctamente.')
         }
         setLoading(false)
     }
@@ -497,9 +497,9 @@ export default function PlansManager() {
             await remove(record.id)
             await loadPlans()
             handleCancel()
-            toast.success('Operação realizada com sucesso!')
+            toast.success('¡Operación completada con éxito!')
         } catch (e) {
-            toast.error('Não foi possível realizar a operação')
+            toast.error('No se puede realizar la operación')
         }
         setLoading(false)
     }
@@ -581,8 +581,9 @@ export default function PlansManager() {
                 onClose={() => setShowConfirmDialog(false)}
                 onConfirm={() => handleDelete()}
             >
-                Deseja realmente excluir esse registro?
+                ¿Está seguro que desea eliminar este registro?
             </ConfirmationModal>
         </Paper>
     )
 }
+

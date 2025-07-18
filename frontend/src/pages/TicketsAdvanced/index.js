@@ -103,7 +103,7 @@ const TicketAdvanced = (props) => {
                     className={classes.root}
                 >
                     <BottomNavigationAction label="Ticket" icon={<ChatIcon />} />
-                    <BottomNavigationAction label="Atendimentos" icon={<QuestionAnswerIcon />} />
+                    <BottomNavigationAction label="Atenciones" icon={<QuestionAnswerIcon />} />
                 </BottomNavigation>
             </Box>
             <Box className={classes.content}>

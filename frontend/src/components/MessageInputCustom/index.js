@@ -667,7 +667,7 @@ useEffect(() => {
                 );
                 setPercentLoading(progress);
                 console.log(
-                  `A imagem  está ${progress}% carregada... `
+                  `la imagen es ${progress}% cargado... `
                 );
               },
             })
@@ -676,13 +676,13 @@ useEffect(() => {
                 setMedias([])
                 setPercentLoading(0);
                 console.log(
-                  `A imagem foi enviada para o servidor!`
+                  `¡La imagen ha sido subida al servidor!`
 
                 );
               })
               .catch((err) => {
                 console.error(
-                  `Houve um problema ao realizar o upload da imagem.`
+                  `Hubo un problema al cargar la imagen..`
                 );
                 console.log(err);
               });
@@ -696,7 +696,7 @@ useEffect(() => {
               );
               setPercentLoading(progress);
               console.log(
-                `A imagem  está ${progress}% carregada... `
+                `la imagen es ${progress}% cargado... `
               );
             },
           })
@@ -705,13 +705,13 @@ useEffect(() => {
             setMedias([])
             setPercentLoading(0);
             console.log(
-              `A imagem foi enviada para o servidor!`
+              `¡La imagen ha sido subida al servidor!`
 
             );
           })
           .catch((err) => {
             console.error(
-              `Houve um problema ao realizar o upload da imagem.`
+              `Hubo un problema al cargar la imagen.`
             );
             console.log(err);
           });

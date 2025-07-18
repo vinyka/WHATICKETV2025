@@ -1,3 +1,4 @@
+
 import React, { useContext, useState, useEffect, useRef } from "react";
 
 import * as Yup from "yup";
@@ -60,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const HubNotificaMeSchema = Yup.object().shape({
-    token: Yup.string().required("Obrigatório"),
-    tipo: Yup.string().oneOf(["Facebook", "Instagram"], "Tipo inválido").required("Obrigatório"),
+    token: Yup.string().required("Obligatorio"),
+    tipo: Yup.string().oneOf(["Facebook", "Instagram"], "tipo no válido").required("Obligatorio"),
 });
 
 const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
@@ -102,7 +103,7 @@ const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
         
         try {
             await api.post("/hub-notificame", values);
-            toast.success("Registro criado com sucesso!");            
+            toast.success("¡Registro creado exitosamente!");            
             handleClose();
         } catch (err) {
             toastError(err);
@@ -113,7 +114,7 @@ const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
 
     return (
         <Dialog open={open} onClose={handleClose} maxWidth="xs" fullWidth>
-            <DialogTitle>Adicionar Token</DialogTitle>
+            <DialogTitle>Agregar Token</DialogTitle>
             <Formik
                 initialValues={hubnotificame}
                 enableReinitialize={true}
@@ -121,7 +122,7 @@ const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
                 onSubmit={handleSaveHubNotificaMe}
             >
                 {({ values, touched, errors, isSubmitting }) => {
-                    console.log("Valores do formulário em tempo real:", values); // Debug
+                    console.log("Valores de formulario en tiempo real:", values); // Debug
 
                     return (
                         <Form>
@@ -130,7 +131,7 @@ const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
                                 {/* Campo Nome */}
                                 <Field
                                     as={TextField}
-                                    label="Nome"
+                                    label="Nombre"
                                     name="nome"
                                     error={touched.token && Boolean(errors.token)}
                                     helperText={touched.token && errors.token}
@@ -183,7 +184,7 @@ const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
                                     variant="contained"
                                     className={classes.btnWrapper}
                                 >
-                                    Adicionar
+                                    Agregar
                                     {isSubmitting && (
                                         <CircularProgress size={24} className={classes.buttonProgress} />
                                     )}

@@ -16,7 +16,7 @@ const VersionLog = () => {
   useEffect(() => {
     async function fetchData() {
       if (!user.super) {
-        toast.error("Esta empresa não possui permissão para acessar essa página! Estamos lhe redirecionando.");
+        toast.error("¡Esta empresa no tiene permiso para acceder a esta página! Te estamos redireccionando.");
         setTimeout(() => {
           history.push(`/`)
         }, 1000);
@@ -30,14 +30,14 @@ const VersionLog = () => {
     const fetchReadme = async () => {
       try {
         const response = await axios.get(
-          'https://api.github.com/repos/weliton2k/attwhaticket/contents/README.md'
+          ''
         );
         const decodedContent = decodeBase64(response.data.content);
         const parsedLog = parseVersionLog(decodedContent);
         setVersionLog(parsedLog);
         setLoading(false);
       } catch (error) {
-        setError('Erro ao carregar o log de versões.');
+        setError('Error al cargar el registro de versión.');
         setLoading(false);
       }
     };

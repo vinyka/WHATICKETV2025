@@ -6,5 +6,5 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
 
   await ImportContactsService(companyId);
 
-  return res.status(200).json({ message: "contacts imported" });
+  return res.status(200).json({ message: "contactos importados" });
 };

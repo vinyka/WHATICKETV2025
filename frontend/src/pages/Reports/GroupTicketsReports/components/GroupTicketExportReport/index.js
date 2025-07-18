@@ -85,7 +85,7 @@ const GroupTicketExportReport = ({ tickets, formatDate }) => {
 
         <View style={classes.titleContainer}>
           <Text style={classes.title}>
-            Relação de Atendimentos em Grupos Realizados
+            Lista de servicios grupales prestados
           </Text>
         </View>
 
@@ -102,13 +102,13 @@ const GroupTicketExportReport = ({ tickets, formatDate }) => {
           <Text style={{ width: '14%', ...classes.headerText }}>Contato</Text>
           <Text style={{ width: '14%', ...classes.headerText }}>WhatsApp</Text>
           <Text style={{ width: '15%', ...classes.headerText }}>
-            Data Abertura
+            Fecha de apertura
           </Text>
           <Text style={{ width: '15%', ...classes.headerText }}>
-            Data Última Atualização
+            Fecha de última actualización
           </Text>
           <Text style={{ width: '19%', ...classes.headerText }}>
-            Quem atendeu
+            quien respondio
           </Text>
           <Text style={{ width: '19%', ...classes.headerText }}>Status</Text>
         </View>

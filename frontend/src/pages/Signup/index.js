@@ -37,7 +37,7 @@ const Copyright = () => {
 		<Typography variant="body2" color="textSecondary" align="center">
 			{"Copyright © "}
 			<Link color="inherit" href="#">
-				Whaticket Saas
+				CRM-WHATSAPP
 			</Link>{" "}
 		   {new Date().getFullYear()}
 			{"."}
@@ -67,11 +67,11 @@ const useStyles = makeStyles(theme => ({
 
 const UserSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(2, "Too Short!")
-		.max(50, "Too Long!")
-		.required("Required"),
-	password: Yup.string().min(5, "Too Short!").max(50, "Too Long!"),
-	email: Yup.string().email("Invalid email").required("Required"),
+		.min(2, "¡Demasiado corto!")
+		.max(50, "¡Demasiado largo!")
+		.required("Requerido"),
+	password: Yup.string().min(5, "¡Demasiado corto!").max(50, "¡Demasiado largo!"),
+	email: Yup.string().email("Invalid email").required("Requerido"),
 });
 
 const SignUp = () => {
@@ -101,7 +101,7 @@ const SignUp = () => {
             const allowtrialX = responsevvv.data.value;
             settrial(allowtrialX);
         } catch (error) {
-            console.error('Error retrieving trial', error);
+            console.error('Error al recuperar la versión de prueba', error);
         }
     };
 
@@ -111,7 +111,7 @@ const SignUp = () => {
             const allowregisterX = responsevv.data.value;
             setallowregister(allowregisterX);
         } catch (error) {
-            console.error('Error retrieving allowregister', error);
+            console.error('Error al recuperar allowregister', error);
         }
     };
 
@@ -186,7 +186,7 @@ const SignUp = () => {
 										variant="outlined"
 										fullWidth
 										id="name"
-										label="Nome da Empresa"
+										label="nombre de empresa"
 									/>
 								</Grid>
 
@@ -223,7 +223,7 @@ const SignUp = () => {
 												{...field}
 												variant="outlined"
 												fullWidth
-												label="DDD988888888"
+												label="00123456789"
 												inputProps={{ maxLength: 11 }} // Definindo o limite de caracteres
 											/>
 										)}
@@ -247,7 +247,7 @@ const SignUp = () => {
 								</Grid>
 
 								<Grid item xs={12}>
-									<InputLabel htmlFor="plan-selection">Plano</InputLabel>
+									<InputLabel htmlFor="plan-selection">Plan</InputLabel>
 									<Field
 										as={Select}
 										variant="outlined"
@@ -258,7 +258,7 @@ const SignUp = () => {
 										required
 									>
                                         <MenuItem value="disabled" disabled>
-                                        	<em>Selecione seu plano de assinatura</em>
+                                        	<em>Seleccione su plan de suscripción</em>
 										</MenuItem>
 										{plans.map((plan, key) => (
 											<MenuItem key={key} value={plan.id}>

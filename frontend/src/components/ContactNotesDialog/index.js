@@ -30,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
 
 const NoteSchema = Yup.object().shape({
 	note: Yup.string()
-		.min(2, "Too Short!")
-        .max(254, "Too long!")
-		.required("Required")
+		.min(2, "¡Demasiado corto!")
+        .max(254, "¡Demasiado largo!")
+		.required("Requerido")
 });
 
 export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
@@ -82,7 +82,7 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
             })
             await loadNotes()
             setNewNote({ note: '' })
-            toast.success('Observação adicionada com sucesso!')
+            toast.success('¡Nota agregada exitosamente!')
         } catch (e) {
             toast.error(e)
         }
@@ -100,7 +100,7 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
             await deleteNote(selectedNote.id)
             await loadNotes()
             setSelectedNote({})
-            toast.success('Observação excluída com sucesso!')
+            toast.success('¡Nota eliminada exitosamente!')
         } catch (e) {
             toast.error(e)
         }
@@ -135,12 +135,12 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
     return (
         <>
             <ConfirmationModal
-                title="Excluir Registro"
+                title="Eliminar registro"
                 open={showOnDeleteDialog}
                 onClose={setShowOnDeleteDialog}
                 onConfirm={handleDelete}
             >
-                Deseja realmente excluir este registro?
+                ¿Está seguro que desea eliminar este registro?
             </ConfirmationModal>
             <Dialog
                 maxWidth="md"
@@ -189,10 +189,10 @@ export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={handleClose} color="primary">
-                                    Fechar
+                                    para cerrar
                                 </Button>
                                 <ButtonWithSpinner loading={loading} color="primary" type="submit" variant="contained" autoFocus>
-                                    Salvar
+                                    Guardar
                                 </ButtonWithSpinner>
                             </DialogActions>
                         </Form>

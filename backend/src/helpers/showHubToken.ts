@@ -8,7 +8,7 @@ export const showHubToken = async (): Promise<string | any> => {
   });
 
   if (!notificameHubToken) {
-    throw new Error("Erro: Token do Notificame Hub não encontrado.");
+    throw new Error("Error: No se encontró el token del Hub de Notificame.");
   }
 
   if(notificameHubToken) {

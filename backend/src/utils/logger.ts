@@ -3,7 +3,7 @@ import moment from 'moment-timezone';
 
 // Função para obter o timestamp com fuso horário
 const timezoned = () => {
-  return moment().tz('America/Sao_Paulo').format('DD-MM-YYYY HH:mm:ss');
+  return moment().tz('America/Bogota').format('DD-MM-YYYY HH:mm:ss');
 };
 
 const logger = pino({

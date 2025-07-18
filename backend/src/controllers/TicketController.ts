@@ -52,7 +52,7 @@ type IndexQueryReport = {
 
 export const index = async (req: Request, res: Response): Promise<Response> => {
   
-  console.log("FUNÇÃO INDEX EXECUTADA");
+  console.log("FUNCIÓN ÍNDICE EJECUTADA");
   const {
     pageNumber,
     status,
@@ -106,7 +106,7 @@ export const index = async (req: Request, res: Response): Promise<Response> => {
 
 export const store = async (req: Request, res: Response): Promise<Response> => {
 
-  console.log("FUNÇÃO STORE EXECUTADA");
+  console.log("FUNCIÓN DE TIENDA EJECUTADA");
 
   const { contactId, status, userId, queueId, whatsappId }: TicketData = req.body;
   const { companyId } = req.user;
@@ -130,7 +130,7 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
 
 export const kanban = async (req: Request, res: Response): Promise<Response> => {
 
-  console.log("FUNÇÃO KANBAN EXECUTADA");
+  console.log("FUNCIÓN KANBAN EJECUTADA");
 
   const {
     pageNumber,
@@ -186,16 +186,16 @@ export const kanban = async (req: Request, res: Response): Promise<Response> => 
 
 export const show = async (req: Request, res: Response): Promise<Response> => {
 
-  console.log("FUNÇÃO SHOW EXECUTADA");
+  console.log("MOSTRAR FUNCIÓN EJECUTADA");
 
   const { ticketId } = req.params;
   const { companyId } = req.user;
 
-  console.log("VALOR DE ticketId NA FUNÇÃO SHOW:", ticketId); // Novo log para ver o valor
+  console.log("VALOR DE ticketId EN LA FUNCIÓN DEL ESPECTÁCULO:", ticketId); // Novo log para ver o valor
 
   if (!ticketId || ticketId === "undefined" || isNaN(+ticketId)) {
-    console.log("ERRO: ticketId inválido detectado na função SHOW:", ticketId);
-    return res.status(400).json({ error: "Ticket ID inválido" });
+    console.log("ERROR: ticketId no válido detectado en función SHOW:", ticketId);
+    return res.status(400).json({ error: "ID de ticket no válido" });
   }
 
   const contact = await ShowTicketService(ticketId, companyId);
@@ -218,14 +218,14 @@ export const update = async (
   res: Response
 ): Promise<Response> => {
 
-  console.log("FUNÇÃO UPDATE EXECUTADA");
+  console.log("FUNCIÓN DE ACTUALIZACIÓN EJECUTADA");
 
   const { ticketId } = req.params;
   const ticketData: TicketData = req.body;
   const { companyId } = req.user;
 
-  console.log("VALOR DE ticketId NA FUNÇÃO UPDATE:", ticketId); // Novo log
-  console.log("DADOS ENVIADOS NA FUNÇÃO UPDATE:", ticketData);  // Novo log
+  console.log("VALOR DE ticketId EN LA FUNCIÓN DE ACTUALIZACIÓN:", ticketId); // Novo log
+  console.log("DATOS ENVIADOS EN LA FUNCIÓN DE ACTUALIZACIÓN:", ticketData);  // Novo log
 
   const { ticket } = await UpdateTicketService({
     ticketData,
@@ -233,7 +233,7 @@ export const update = async (
     companyId
   });
 
-  console.log("TICKET RETORNADO POR UPDATE:", ticket); // Novo log
+  console.log("CHAT DEVUELTO POR ACTUALIZACIÓN:", ticket); // Novo log
   
   return res.status(200).json(ticket);
 };
@@ -243,7 +243,7 @@ export const remove = async (
   res: Response
 ): Promise<Response> => {
 
-  console.log("FUNÇÃO REMOVE EXECUTADA");
+  console.log("FUNCIÓN DE ELIMINACIÓN EJECUTADA");
 
   const { ticketId } = req.params;
   const { companyId } = req.user;
@@ -263,13 +263,13 @@ export const remove = async (
       ticketId: +ticketId
     });
 
-  return res.status(200).json({ message: "ticket deleted" });
+  return res.status(200).json({ message: "Chat eliminado" });
 };
 
 
 export const report = async (req: Request, res: Response): Promise<Response> => {
 
-  console.log("FUNÇÃO REPORT EXECUTADA");
+  console.log("FUNCIÓN DE INFORME EJECUTADA");
 
   const {
     searchParam,
@@ -339,7 +339,7 @@ export const report = async (req: Request, res: Response): Promise<Response> => 
 
 export const closeAll = async (req: Request, res: Response): Promise<Response> => {
   
-  console.log("FUNÇÃO CLOSEALL EXECUTADA");
+  console.log("FUNCIÓN CLOSEALL EJECUTADA");
 
   const { companyId } = req.user;
   const { status }: TicketData = req.body;

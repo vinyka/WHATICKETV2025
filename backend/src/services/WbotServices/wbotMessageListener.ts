@@ -298,7 +298,7 @@ export const sendMessageImage = async (
     sentMessage = await wbot.sendMessage(
       `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`,
       {
-        text: formatBody('Não consegui enviar o PDF, tente novamente!', contact)
+        text: formatBody('No pude cargar el PDF, ¡inténtalo nuevamente!', contact)
       }
     );
   }
@@ -326,7 +326,7 @@ export const sendMessageLink = async (
   } catch (error) {
     sentMessage = await wbot.sendMessage(
       `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, {
-      text: formatBody('Não consegui enviar o PDF, tente novamente!', contact)
+      text: formatBody('No pude cargar el PDF, ¡inténtalo nuevamente!', contact)
     }
     );
   }
@@ -412,11 +412,11 @@ export const getBodyMessage = (msg: proto.IWebMessageInfo): string | null => {
     const objKey = Object.keys(types).find(key => key === type);
 
     if (!objKey) {
-      logger.warn(`#### Nao achou o type 152: ${type}
+      logger.warn(`#### No encontré el tipo 152: ${type}
 ${JSON.stringify(msg)}`);
       Sentry.setExtra("Mensagem", { BodyMsg: msg.message, msg, type });
       Sentry.captureException(
-        new Error("Novo Tipo de Mensagem em getTypeMessage")
+        new Error("Nuevo tipo de mensaje getTypeMessage")
       );
     }
     return types[type];
@@ -504,7 +504,7 @@ const downloadMedia = async (msg: proto.IWebMessageInfo) => {
   } catch (err) {
 
 
-    console.error('Erro ao baixar mídia:', err);
+    console.error('Error al descargar medios:', err);
 
     // Trate o erro de acordo com as suas necessidades
   }
@@ -597,7 +597,7 @@ const convertTextToSpeechAndSaveToFile = (
   filename: string,
   subscriptionKey: string,
   serviceRegion: string,
-  voice: string = "pt-BR-FabioNeural",
+  voice: string = "es-MX-DaliaNeural",
   audioToFormat: string = "mp3"
 ): Promise<void> => {
   return new Promise((resolve, reject) => {
@@ -625,7 +625,7 @@ const convertTextToSpeechAndSaveToFile = (
               reject(error);
             });
         } else {
-          reject(new Error("No result from synthesizer"));
+          reject(new Error("Ningún resultado de synthesizer"));
         }
         synthesizer.close();
       },
@@ -649,7 +649,7 @@ const convertWavToAnotherFormat = (
       .toFormat(toFormat)
       .on("end", () => resolve(outputPath))
       .on("error", (err: { message: any }) =>
-        reject(new Error(`Error converting file: ${err.message}`))
+        reject(new Error(`Error al convertir el archivo: ${err.message}`))
       )
       .save(outputPath);
   });
@@ -659,7 +659,7 @@ const deleteFileSync = (path: string): void => {
   try {
     fs.unlinkSync(path);
   } catch (error) {
-    console.error("Erro ao deletar o arquivo:", error);
+    console.error("Error al eliminar el archivo:", error);
   }
 };
 
@@ -718,10 +718,10 @@ const handleOpenAi = async (
     limit: prompt.maxMessages
   });
 
-  const promptSystem = `Nas respostas utilize o nome ${sanitizeName(
+  const promptSystem = `En tus respuestas, utiliza el nombre ${sanitizeName(
     contact.name || "Amigo(a)"
-  )} para identificar o cliente.\nSua resposta deve usar no máximo ${prompt.maxTokens
-    } tokens e cuide para não truncar o final.\nSempre que possível, mencione o nome dele para ser mais personalizado o atendimento e mais educado. Quando a resposta requer uma transferência para o setor de atendimento, comece sua resposta com 'Ação: Transferir para o setor de atendimento'.\n
+  )} para identificar al cliente.\nSu respuesta debe usar como máximo ${prompt.maxTokens
+    } tokens y ten cuidado de no truncar el final.\nSiempre que sea posible, mencione su nombre para que el servicio sea más personalizado y amable. Cuando la respuesta requiera una transferencia al servicio de atención al cliente, comience su respuesta con 'Acción: Transferencia al servicio de atención al cliente.\n
   ${prompt.prompt}\n`;
 
   let messagesOpenAi: ChatCompletionRequestMessage[] = [];
@@ -754,10 +754,10 @@ const handleOpenAi = async (
 
     let response = chat.data.choices[0].message?.content;
 
-    if (response?.includes("Ação: Transferir para o setor de atendimento")) {
+    if (response?.includes("Acción: Transferencia al sector servicios")) {
       await transferQueue(prompt.queueId, ticket, contact);
       response = response
-        .replace("Ação: Transferir para o setor de atendimento", "")
+        .replace("Acción: Transferencia al sector servicios", "")
         .trim();
     }
 
@@ -786,7 +786,7 @@ const handleOpenAi = async (
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.mp3`);
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.wav`);
         } catch (error) {
-          console.log(`Erro para responder com audio: ${error}`);
+          console.log(`Error al responder con audio: ${error}`);
         }
       });
     }
@@ -820,10 +820,10 @@ const handleOpenAi = async (
     });
     let response = chat.data.choices[0].message?.content;
 
-    if (response?.includes("Ação: Transferir para o setor de atendimento")) {
+    if (response?.includes("Acción: Transferencia al sector servicios")) {
       await transferQueue(prompt.queueId, ticket, contact);
       response = response
-        .replace("Ação: Transferir para o setor de atendimento", "")
+        .replace("Acción: Transferencia al sector servicios", "")
         .trim();
     }
     if (prompt.voice === "texto") {
@@ -851,7 +851,7 @@ const handleOpenAi = async (
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.mp3`);
           deleteFileSync(`${publicFolder}/${fileNameWithOutExtension}.wav`);
         } catch (error) {
-          console.log(`Erro para responder com audio: ${error}`);
+          console.log(`Error al responder con audio: ${error}`);
         }
       });
     }
@@ -911,15 +911,15 @@ const verifyMediaMessage = async (
         .toFormat('mp3')
         .save((folder + '/' + media.filename).replace('.ogg', '.mp3'))
         .on('end', () => {
-          logger.info('Conversão concluída!');
+          logger.info('¡Conversión completa!');
           resolve();
         })
         .on('error', (err) => {
-          logger.error('Erro durante a conversão:', err);
+          logger.error('Error durante la conversión:', err);
           reject(err);
         });
       } else {
-          logger.info('Não é necessário converter o arquivo. Não é formato OGG.');
+          logger.info('No es necesario convertir el archivo. No es formato OGG.');
           resolve(); // Resolve immediately since no conversion is needed.
       }
     });
@@ -1102,10 +1102,10 @@ const isValidMsg = (msg: proto.IWebMessageInfo): boolean => {
       msgType === "viewOnceMessage";
 
     if (!ifType) {
-      logger.warn(`#### Nao achou o type em isValidMsg: ${msgType}
+      logger.warn(`#### No encontré el tipo en isValidMsg: ${msgType}
 ${JSON.stringify(msg?.message)}`);
-      Sentry.setExtra("Mensagem", { BodyMsg: msg.message, msg, msgType });
-      Sentry.captureException(new Error("Novo Tipo de Mensagem em isValidMsg"));
+      Sentry.setExtra("Mensaje", { BodyMsg: msg.message, msg, msgType });
+      Sentry.captureException(new Error("Nuevo tipo de mensaje isValidMsg"));
     }
 
     return !!ifType;
@@ -1251,7 +1251,7 @@ const verifyQueue = async (
       text: formatBody(`\u200e${greetingMessage}\n\n${options}`, contact),
     };
     let lastMsg = map_msg.get(contact.number)
-    let invalidOption = "Opção inválida, por favor, escolha uma opção válida."
+    let invalidOption = "Opción no válida, por favor elija una opción válida."
     
 
     // console.log('getBodyMessage(msg)', getBodyMessage(msg))
@@ -1341,7 +1341,7 @@ if (choosenQueue.options.length === 0) {
         });
 
         // Envia a mensagem de finalização
-        const finalizationMessage = "Seu ticket foi finalizado porque estamos *Offline* no momento.";
+        const finalizationMessage = "Tu ticket ha sido finalizado porque estamos *Offline* en este momento.";
         await wbot.sendMessage(
           `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, {
           text: finalizationMessage,
@@ -1349,7 +1349,7 @@ if (choosenQueue.options.length === 0) {
       }
     } else if (ticket.status === "assigned") {
       // Prevent looping by checking if the ticket is assigned
-      console.log("Ticket is assigned, no need to send out-of-hours message.");
+      console.log("El ticket está asignado, no es necesario enviar un mensaje fuera de horario.");
       return; // Skip further processing if assigned
     }
   }
@@ -1795,7 +1795,7 @@ const handleChartbot = async (ticket: Ticket, msg: WAMessage, wbot: Session, don
 
         const listMessage = {
           text: formatBody(`\u200e${currentOption.message}`, ticket.contact),
-          buttonText: "Escolha uma opção",
+          buttonText: "Elige una opción",
           sections
         };
 
@@ -2036,19 +2036,19 @@ const handleMessage = async (
 
     // Verifica se a mensagem é "#assumir" e foi enviada pelo atendente
 if (msg.key.fromMe && bodyMessage === "#assumir") {
-  console.log("Comando #assumir detectado!");
+  console.log("¡Se ha detectado el Comando #assumir ");
   
   // Busca o ticket já criado anteriormente na função
   const ticket = await FindOrCreateTicketService(contact, wbot.id!, unreadMessages, companyId, groupContact);
   
   // Verifica se o ticket está no status "pending"
   if (ticket.status === "pending") {
-    console.log(`Ticket ${ticket.id} está no status 'pending'. Pronto para ser assumido.`);
+    console.log(`Ticket ${ticket.id} esta en estado 'pendiente'. Listo para ser asumido.`);
 
     // Pega o número da empresa conectado ao wbot
     const whatsapp = await ShowWhatsAppService(wbot.id!, companyId);
     const companyNumber = whatsapp.number; // Número da empresa conectado ao Whaticket
-    console.log(`Número da empresa conectado: ${companyNumber}`);
+    console.log(`Número de empresa conectada: ${companyNumber}`);
 
     // Busca o atendente associado ao número da empresa
     const attendant = await User.findOne({
@@ -2064,12 +2064,12 @@ if (msg.key.fromMe && bodyMessage === "#assumir") {
         userId: attendant.id,
         chatbot: false
       });
-      console.log(`Ticket ${ticket.id} atualizado para 'open'. Atendente ${attendant.id} assumiu a conversa.`);
+      console.log(`Ticket ${ticket.id} actualizado a 'abierto'. Asistente ${attendant.id} se hizo cargo de la conversación.`);
     } else {
-      console.log(`Nenhum atendente encontrado com o número ${companyNumber}. O ticket não foi assumido.`);
+      console.log(`No se encontró ningún asistente con el número ${companyNumber}. El billete no fue aceptado`);
     }
   } else {
-    console.log(`Ticket ${ticket.id} não está no status 'pending'. Status atual: ${ticket.status}`);
+    console.log(`Ticket ${ticket.id} no está en estado 'pendiente'. Estado actual: ${ticket.status}`);
   }
   
   return; // Para evitar que o resto da função processe essa mensagem

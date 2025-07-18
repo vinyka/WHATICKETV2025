@@ -159,7 +159,7 @@ const Login = () => {
                             <Grid container justify="flex-end">
                                 <Grid item xs={6} style={{ textAlign: "right" }}>
                                     <Link component={RouterLink} to="/forgetpsw" variant="body2" className={classes.link}>
-                                        Esqueceu sua senha?
+                                        ¿Olvidaste tu contraseña?
                                     </Link>
                                 </Grid>
                             </Grid>

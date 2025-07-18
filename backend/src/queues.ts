@@ -80,7 +80,7 @@ async function handleSendMessage(job) {
     const whatsapp = await Whatsapp.findByPk(data.whatsappId);
 
     if (whatsapp == null) {
-      throw Error("Whatsapp não identificado");
+      throw Error("WhatsApp no ​​identificado");
     }
 
     const messageData: MessageData = data.data;
@@ -239,7 +239,7 @@ async function handleVerifySchedules(job) {
           { schedule },
           { delay: 40000 }
         );
-        logger.info(`Disparo agendado para: ${schedule.contact.name}`);
+        logger.info(`Rodaje programado para: ${schedule.contact.name}`);
       });
     }
   } catch (e: any) {
@@ -259,7 +259,7 @@ async function handleSendScheduledMessage(job) {
     scheduleRecord = await Schedule.findByPk(schedule.id);
   } catch (e) {
     Sentry.captureException(e);
-    logger.info(`Erro ao tentar consultar agendamento: ${schedule.id}`);
+    logger.info(`Error al intentar consultar agenda: ${schedule.id}`);
   }
 
   try {
@@ -281,7 +281,7 @@ async function handleSendScheduledMessage(job) {
       status: "ENVIADA"
     });
 
-    logger.info(`Mensagem agendada enviada para: ${schedule.contact.name}`);
+    logger.info(`Mensaje programado enviado a: ${schedule.contact.name}`);
     sendScheduledMessages.clean(15000, "completed");
   } catch (e: any) {
     Sentry.captureException(e);
@@ -314,7 +314,7 @@ async function handleVerifyCampaigns(job) {
       const scheduledAt = moment(campaign.scheduledAt);
       const delay = scheduledAt.diff(now, "milliseconds");
       logger.info(
-        `Campanha enviada para a fila de processamento: Campanha=${campaign.id}, Delay Inicial=${delay}`
+        `Campaña enviada a la cola de procesamiento: Campanha=${campaign.id}, Delay Inicial=${delay}`
       );
       campaignQueue.add(
         "ProcessCampaign",
@@ -408,12 +408,12 @@ export function parseToMilliseconds(seconds) {
 
 async function sleep(seconds) {
   logger.info(
-    `Sleep de ${seconds} segundos iniciado: ${moment().format("HH:mm:ss")}`
+    `Pausa de ${seconds} segundos comenzaron: ${moment().format("HH:mm:ss")}`
   );
   return new Promise(resolve => {
     setTimeout(() => {
       logger.info(
-        `Sleep de ${seconds} segundos finalizado: ${moment().format(
+        `Pausa de ${seconds} segundos terminados: ${moment().format(
           "HH:mm:ss"
         )}`
       );
@@ -584,7 +584,7 @@ async function handleProcessCampaign(job) {
             { removeOnComplete: true }
           );
           queuePromises.push(queuePromise);
-          logger.info(`Registro enviado pra fila de disparo: Campanha=${campaign.id};Contato=${contacts[i].name};delay=${delay}`);
+          logger.info(`Registro enviado a la cola de activación: Campanha=${campaign.id};Contato=${contacts[i].name};delay=${delay}`);
         }
         await Promise.all(queuePromises);
         await campaign.update({ status: "EM_ANDAMENTO" });
@@ -704,7 +704,7 @@ async function handleDispatchCampaign(job) {
     }
 
     logger.info(
-      `Disparo de campanha solicitado: Campanha=${campaignId};Registro=${campaignShippingId}`
+      `Se solicita el despido de campaña: Campanha=${campaignId};Registro=${campaignShippingId}`
     );
 
     const campaignShipping = await CampaignShipping.findByPk(
@@ -774,7 +774,7 @@ async function handleDispatchCampaign(job) {
     });
 
     logger.info(
-      `Campanha enviada para: Campanha=${campaignId};Contato=${campaignShipping.contact.name}`
+      `Campaña enviada a: Campanha=${campaignId};Contato=${campaignShipping.contact.name}`
     );
   } catch (err: any) {
     Sentry.captureException(err);
@@ -792,7 +792,7 @@ async function handleLoginStatus(job) {
     try {
       const user = await User.findByPk(item.id);
       await user.update({ online: false });
-      logger.info(`Usuário passado para offline: ${item.id}`);
+      logger.info(`Usuario desconectado: ${item.id}`);
     } catch (e: any) {
       Sentry.captureException(e);
     }
@@ -823,11 +823,11 @@ async function handleInvoiceCreate() {
         
         if(dias <= -3){
        
-          logger.info(`EMPRESA: ${c.id} está VENCIDA A MAIS DE 3 DIAS... INATIVANDO... ${dias}`);
+          logger.info(`EMPRESA: ${c.id} HA ESTADO CADUCADO POR MÁS DE 3 DÍAS...INACTIVANDO... ${dias}`);
           c.status = false;
           await c.save(); // Save the updated company record
-          logger.info(`EMPRESA: ${c.id} foi INATIVADA.`);
-          logger.info(`EMPRESA: ${c.id} Desativando conexões com o WhatsApp...`);
+          logger.info(`EMPRESA: ${c.id} fue INACTIVADO.`);
+          logger.info(`EMPRESA: ${c.id} Deshabilitar conexiones con WhatsApp...`);
           
           try {
     		const whatsapps = await Whatsapp.findAll({
@@ -843,13 +843,13 @@ async function handleInvoiceCreate() {
     				await whatsapp.update({ status: "DISCONNECTED", session: "" });
     				const wbot = getWbot(whatsapp.id);
     				await wbot.logout();
-                	logger.info(`EMPRESA: ${c.id} teve o WhatsApp ${whatsapp.id} desconectado...`);
+                	logger.info(`EMPRESA: ${c.id} tenia WhatsApp ${whatsapp.id} desconectado...`);
   				}
     		}
           
   		  } catch (error) {
     		// Lidar com erros, se houver
-    		console.error('Erro ao buscar os IDs de WhatsApp:', error);
+    		console.error('Error al obtener los ID de WhatsApp:', error);
     		throw error;
   		  }
 
@@ -881,7 +881,7 @@ async function handleInvoiceCreate() {
 
             const invoiceInsert = await sequelize.query(sql, { type: QueryTypes.INSERT });
         
-            logger.info(`Fatura Gerada para o cliente: ${c.id}`);
+            logger.info(`Factura generada para el cliente: ${c.id}`);
 
             // Rest of the code for sending email
           }
@@ -913,7 +913,7 @@ handleCloseTicketsAutomatic()
 handleInvoiceCreate()
 
 export async function startQueueProcess() {
-  logger.info("Iniciando processamento de filas");
+  logger.info("Iniciando procesamiento de departamento");
 
   messageQueue.process("SendMessage", handleSendMessage);
 

@@ -67,11 +67,11 @@ const useStyles = makeStyles(theme => ({
 
 const UserSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(2, "Too Short!")
-		.max(50, "Too Long!")
-		.required("Required"),
-	password: Yup.string().min(5, "Too Short!").max(50, "Too Long!"),
-	email: Yup.string().email("Invalid email").required("Required"),
+		.min(2, "¡Demasiado corto!")
+		.max(50, "¡Demasiado largo!")
+		.required("Requerido"),
+	password: Yup.string().min(5, "¡Demasiado corto!").max(50, "¡Demasiado largo!"),
+	email: Yup.string().email("Invalid email").required("Requerido"),
 });
 
 const UserModal = ({ open, onClose, userId }) => {
@@ -232,8 +232,8 @@ const UserModal = ({ open, onClose, userId }) => {
 														id="profile-selection"
 														required
 													>
-														<MenuItem value="admin">Admin</MenuItem>
-														<MenuItem value="user">User</MenuItem>
+														<MenuItem value="admin">Administrador</MenuItem>
+														<MenuItem value="user">Agente</MenuItem>
 													</Field>
 												</>
 											)}
@@ -315,7 +315,7 @@ const UserModal = ({ open, onClose, userId }) => {
 								    variant="outlined"
 								    margin="dense"
 								    fullWidth
-								    placeholder="Ex.: 559285549606"
+								    placeholder="Ex.: 001234567890"
 								  />
 								</div>
 								

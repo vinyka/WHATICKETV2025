@@ -121,11 +121,11 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
     const whatsapp = await Whatsapp.findByPk(whatsappId);
 
     if (!whatsapp) {
-      throw new Error("Não foi possível realizar a operação");
+      throw new Error("No se puede realizar la operación");
     }
 
     if (messageData.number === undefined) {
-      throw new Error("O número é obrigatório");
+      throw new Error("El numero es obligatorio");
     }
 
     const numberToTest = messageData.number;
@@ -190,11 +190,11 @@ export const send = async (req: Request, res: Response): Promise<Response> => {
     
     SetTicketMessagesAsRead(ticket);
 
-    return res.send({ mensagem: "Mensagem enviada" });
+    return res.send({ mensagem: "Mensaje enviado" });
   } catch (err: any) {
     if (Object.keys(err).length === 0) {
       throw new AppError(
-        "Não foi possível enviar a mensagem, tente novamente em alguns instantes"
+        "No se puede enviar el mensaje, inténtelo de nuevo en unos momentos."
       );
     } else {
       throw new AppError(err.message);
@@ -215,7 +215,7 @@ export const addReaction = async (req: Request, res: Response): Promise<Response
     });
 
     if (!message) {
-      return res.status(404).send({message: "Mensagem não encontrada"});
+      return res.status(404).send({message: "Mensaje no encontrado"});
     }
 
     // Envia a reação via WhatsApp
@@ -237,16 +237,16 @@ export const addReaction = async (req: Request, res: Response): Promise<Response
     });
 
     return res.status(200).send({
-      message: 'Reação adicionada com sucesso!',
+      message: '¡Reacción agregada exitosamente!',
       reactionResult,
       reactions: updatedMessage.reactions
     });
   } catch (error) {
-    console.error('Erro ao adicionar reação:', error);
+    console.error('Error al agregar la reacción:', error);
     if (error instanceof AppError) {
       return res.status(400).send({message: error.message});
     }
-    return res.status(500).send({message: 'Erro ao adicionar reação', error: error.message});
+    return res.status(500).send({message: 'Error al agregar la reacción', error: error.message});
   }
 };
 
@@ -272,21 +272,21 @@ export const forwardMessage = async (
   const requestUser = await User.findByPk(userId);
 
   if (!messageId || !contactId) {
-    return res.status(200).send("MessageId or ContactId not found");
+    return res.status(200).send("MessageId o ContactId extraviado");
   }
   const message = await ShowMessageService(messageId);
   const contact = await ShowContactService(contactId, companyId);
 
   if (!message) {
-    return res.status(404).send("Message not found");
+    return res.status(404).send("Mensaje no encontrado");
   }
   if (!contact) {
-    return res.status(404).send("Contact not found");
+    return res.status(404).send("Contacto no encontrado");
   }
 
   const whatsAppConnectionId = await GetWhatsAppFromMessage(message);
   if (!whatsAppConnectionId) {
-    return res.status(404).send('Whatsapp from message not found');
+    return res.status(404).send('WhatsApp del mensaje no encontrado');
   }
 
   const ticket = await ShowTicketService(message.ticketId, message.companyId);

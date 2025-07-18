@@ -19,9 +19,9 @@ const ImportContactsService = async (companyId: number): Promise<void> => {
   } catch (error) {
     logger.warn(
       { baileys },
-      `Could not get whatsapp contacts from database. Err: ${error}`
+      `No se pudieron obtener los contactos de WhatsApp de la base de datos. Err: ${error}`
     );
-    throw new AppError("Could not get whatsapp contacts from database.", 500);
+    throw new AppError("No se pudieron obtener los contactos de WhatsApp de la base de datos.", 500);
   }
 
   if (Array.isArray(phoneContactsList)) {
@@ -49,7 +49,7 @@ const ImportContactsService = async (companyId: number): Promise<void> => {
           } catch (error) {
             logger.error(
               { name, number, companyId },
-              `Could not save contact. Err: ${error}`
+              `No se pudo guardar el contacto. Err: ${error}`
             );
           }
         }
@@ -59,12 +59,12 @@ const ImportContactsService = async (companyId: number): Promise<void> => {
     processContacts(phoneContactsList).then(
       () => {
         logger.debug(
-          `Contacts imported successfully from WhatsApp for company ID: ${companyId}`
+          `Contactos importados exitosamente desde WhatsApp para empresa ID: ${companyId}`
         );
       },
       error => {
         logger.error(
-          `Error importing contacts from WhatsApp for company ID: ${companyId} - ${error.message}`
+          `Error al importar contactos de WhatsApp para empresa ID: ${companyId} - ${error.message}`
         );
       }
     );

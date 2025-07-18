@@ -221,7 +221,7 @@ export default function Whitelabel(props) {
       value,
     });
     updateSettingsLoaded(key, value);
-    toast.success("Operação atualizada com sucesso.");
+    toast.success("Operación actualizada exitosamente.");
   }
 
   const uploadLogo = async (e, mode) => {
@@ -241,7 +241,7 @@ export default function Whitelabel(props) {
           (event.loaded * 100) / event.total
         );
         console.log(
-          `A imagem  está ${progress}% carregada... `
+          `la imagen es ${progress}% cargado... `
         );
       },
     }).then((response) => {
@@ -249,7 +249,7 @@ export default function Whitelabel(props) {
       colorMode[`setAppLogo${mode}`](process.env.REACT_APP_BACKEND_URL + "/public/" + response.data);
     }).catch((err) => {
       console.error(
-        `Houve um problema ao realizar o upload da imagem.`
+        `Hubo un problema al cargar la imagen.`
       );
       console.log(err);
     });
@@ -263,7 +263,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="primary-color-light-field"
-              label="Cor Primária Modo Claro"
+              label="Modo de luz de color primario"
               variant="standard"
               value={settingsLoaded.primaryColorLight || ""}
               onClick={() => setPrimaryColorLightModalOpen(true)}
@@ -308,7 +308,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="primary-color-dark-field"
-              label="Cor Primária Modo Escuro"
+              label="Modo oscuro de color primario"
               variant="standard"
               value={settingsLoaded.primaryColorDark || ""}
               onClick={() => setPrimaryColorDarkModalOpen(true)}
@@ -348,7 +348,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="appname-field"
-              label="Nome do sistema"
+              label="Nombre del sistema"
               variant="standard"
               name="appName"
               value={appName}
@@ -418,7 +418,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="logo-dark-upload-field"
-              label="Logotipo escuro"
+              label="Logotipo oscuro"
               variant="standard"
               value={settingsLoaded.appLogoDark || ""}
               InputProps={{
@@ -545,7 +545,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="color-chatlist-field"
-              label="Fundo Chat Interno Modo Claro"
+              label="Modo claro de fondo del chat interno"
               variant="standard"
               value={settingsLoaded.chatlistLight || ""}
               onClick={() => setChatlistLightModalOpen(true)}
@@ -588,7 +588,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="color-chatlist-field"
-              label="Fundo Chat Interno Modo Escuro"
+              label="Fondo de chat interno en modo oscuro"
               variant="standard"
               value={settingsLoaded.chatlistDark || ""}
               onClick={() => setChatlistDarkModalOpen(true)}
@@ -633,7 +633,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="color-boxRight-field"
-              label="Mensagens do usuário Modo Claro"
+              label="Mensajes de usuario del modo claro"
               variant="standard"
               value={settingsLoaded.boxRightLight || ""}
               onClick={() => setBoxRightLightModalOpen(true)}
@@ -676,7 +676,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="color-boxRight-field"
-              label="Mensagens do usuário Modo Escuro"
+              label="Mensajes de usuario del modo oscuro"
               variant="standard"
               value={settingsLoaded.boxRightDark || ""}
               onClick={() => setBoxRightDarkModalOpen(true)}
@@ -721,7 +721,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="color-boxLeft-field"
-              label="Mensagens de outros Modo Claro"
+              label="Mensajes de otros en modo claro"
               variant="standard"
               value={settingsLoaded.boxLeftLight || ""}
               onClick={() => setBoxLeftLightModalOpen(true)}
@@ -764,7 +764,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="color-boxLeft-field"
-              label="Mensagens de outros Modo Escuro"
+              label="Mensajes de otros en modo oscuro"
               variant="standard"
               value={settingsLoaded.boxLeftDark || ""}
               onClick={() => setBoxLeftDarkModalOpen(true)}
@@ -797,7 +797,7 @@ export default function Whitelabel(props) {
                 setBoxLeftDarkModalOpen(false);
                 handleSaveSetting("boxLeftDark", color).then(r => colorMode.setBoxLeftDark(color));
               } else {
-                toast.error("Cor inválida");
+                toast.error("color no válido");
               }
             }}
           />

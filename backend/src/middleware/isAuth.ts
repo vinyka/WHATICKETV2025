@@ -31,7 +31,7 @@ const isAuth = (req: Request, res: Response, next: NextFunction): void => {
       companyId
     };
   } catch (err) {
-    throw new AppError("Invalid token. We'll try to assign a new one on next request", 403 );
+    throw new AppError("Token inválido. Intentaremos asignar uno nuevo en la próxima solicitud.", 403 );
   }
 
   return next();

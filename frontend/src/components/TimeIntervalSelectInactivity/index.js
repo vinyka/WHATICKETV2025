@@ -41,7 +41,7 @@ const TimeIntervalSelectInactivity = ({ selectedInterval, onChange }) => {
 					}}
 				>
                 	<MenuItem key="0" value="0" selected>
-							DESABILITADO
+							DESACTIVADO
 						</MenuItem>
 {Array.from({length: 120}, (_, i) => (i+1)*5).map(interval => (
 						<MenuItem key={interval} value={interval}>

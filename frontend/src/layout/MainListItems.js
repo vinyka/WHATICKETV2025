@@ -162,7 +162,7 @@ const MainListItems = (props) => {
   const [showIntegrations, setShowIntegrations] = useState(false); const history = useHistory();
   const [showSchedules, setShowSchedules] = useState(false);
   const [showInternalChat, setShowInternalChat] = useState(false);
-  const [showExternalApi, setShowExternalApi] = useState(false);
+  const [showExternalApi, setShowExternalApi] = useState(true);
 
 
   const [invisible, setInvisible] = useState(true);
@@ -319,7 +319,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Atendimento")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Atenciones")} </Typography>
             </ListSubheader>
             <>
 
@@ -342,7 +342,7 @@ const MainListItems = (props) => {
               )}
               <ListItemLink
                 to="/todolist"
-                primary={i18n.t("Tarefas")}
+                primary={i18n.t("Tareas")}
                 icon={<BorderColorIcon />}
               />
               <ListItemLink
@@ -403,7 +403,7 @@ const MainListItems = (props) => {
               inset
               color="inherit">
 
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Gerência")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Gestión")} </Typography>
             </ListSubheader>
 
             <ListItemLink
@@ -415,7 +415,7 @@ const MainListItems = (props) => {
 			
 			<ListItemLink
 				to="/relatorios"
-				primary={i18n.t("Relátorios")}
+				primary={i18n.t("Reportes")}
 				icon={<SearchIcon />}
 			/>
 			
@@ -440,20 +440,20 @@ const MainListItems = (props) => {
                   }}
                   inset
                   color="inherit">
-                  <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Campanhas")} </Typography>
+                  <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Campañas")} </Typography>
                 </ListSubheader>
 
                 <ListItemLink
                   small
                   to="/campaigns"
-                  primary={i18n.t("Listagem")}
+                  primary={i18n.t("Listado")}
                   icon={<ListIcon />}
                 />
 
                 <ListItemLink
                   small
                   to="/contact-lists"
-                  primary={i18n.t("Listas de Contatos")}
+                  primary={i18n.t("Listas de contactos")}
                   icon={<PeopleIcon />}
                 />
 
@@ -461,7 +461,7 @@ const MainListItems = (props) => {
                 <ListItemLink
                   small
                   to="/campaigns-config"
-                  primary={i18n.t("Configurações")}
+                  primary={i18n.t("Ajustes")}
                   icon={<ListIcon />}
                 />
 
@@ -535,7 +535,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Multiconexões")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Multiconexiones")} </Typography>
             </ListSubheader>
 
             <ListItemLink
@@ -547,7 +547,7 @@ const MainListItems = (props) => {
               <ListItemLink
               to="/connections"
               //primary={i18n.t("mainDrawer.listItems.connections")}
-              primary="Multicanais"
+              primary="Multicanal"
               icon={
                 <Badge badgeContent={connectionWarning ? "!" : null} color="error">
                   <LanIcon />
@@ -588,7 +588,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Administração")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Administracion")} </Typography>
             </ListSubheader>
 
             {user.super && (
@@ -619,7 +619,7 @@ const MainListItems = (props) => {
               primary={i18n.t("mainDrawer.listItems.financeiro")}
               icon={<LocalAtmIcon />}
             />
-
+            <ListItemLink to="/messages-api" primary="API" icon={<CodeRoundedIcon/>} />
             <ListItemLink
               to="/settings"
               primary={i18n.t("mainDrawer.listItems.settings")}
@@ -645,7 +645,7 @@ const MainListItems = (props) => {
               <React.Fragment>
                 <Divider />
               <Typography style={{ fontSize: "12px", padding: "10px", textAlign: "right", fontWeight: "bold" }}>
-                Versão: 11.0
+                Versión: 1.1.0
 
                 </Typography>
               </React.Fragment>

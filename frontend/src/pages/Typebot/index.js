@@ -23,7 +23,7 @@ const Typebot = () => {
     <div className={classes.root}>
       <iframe
         className={classes.iframe}
-        src="https://typebot.wamanager.com.br" // URL corrigida para o link correto
+        src="https://typebotapi.crmdtoditogsm.cfd/es/signin" // URL corrigida para o link correto
         title="Typebot"
       />
     </div>

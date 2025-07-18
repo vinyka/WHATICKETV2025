@@ -48,7 +48,7 @@ const VCardPreview = ({ contact, numbers }) => {
                     padding: "20px",
                     outline: "none",
                 }}>
-                    <h2>Selecione a Fila</h2>
+                    <h2>Seleccione un departamento</h2>
                     {user.queues.map((queue) => (
                         <div key={queue.id}>
                             <Button onClick={() => handleQueueSelection(queue.id)}>
@@ -157,11 +157,11 @@ const VCardPreview = ({ contact, numbers }) => {
                     </Grid>
 					<Grid item xs={9}>
                         <Typography style={{ marginLeft: "10px", color: theme.palette.text.vcard }} variant="body2" gutterBottom>
-                            <strong>Nome:</strong> {selectedContact.name}
+                            <strong>Nombre:</strong> {selectedContact.name}
                         </Typography>
                         <Typography style={{ marginLeft: "10px", color: theme.palette.text.vcard }} variant="body2" gutterBottom>
                             <Typography variant="body2" component="span">
-                                <strong>Telefone:</strong> {selectedContact.number}
+                                <strong>Teléfono:</strong> {selectedContact.number}
                             </Typography>
                         </Typography>
                     </Grid>
@@ -176,7 +176,7 @@ const VCardPreview = ({ contact, numbers }) => {
                             }}
                             disabled={!selectedContact.number || !isContactValid}
                         >
-                            {isContactValid  ? "Conversar (Novo Ticket)" : "CONTATO FORA DO WHATSAPP"}
+                            {isContactValid  ? "Chat (Nuevo ticket)" : "CONTACTO FUERA DE WHATSAPP"}
                         </Button>
                     </Grid>
                 </Grid>

@@ -130,7 +130,7 @@ export const remove = async (
     id
   });
 
-  return res.status(200).json({ message: "Announcement deleted" });
+  return res.status(200).json({ message: "Anuncio eliminado" });
 };
 
 export const findList = async (
@@ -166,7 +166,7 @@ export const mediaUpload = async (
       record: announcement
     });
 
-    return res.send({ mensagem: "Mensagem enviada" });
+    return res.send({ mensagem: "Mensaje enviado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }
@@ -198,7 +198,7 @@ export const deleteMedia = async (
       record: announcement
     });
 
-    return res.send({ mensagem: "Arquivo excluído" });
+    return res.send({ mensagem: "archivo eliminado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }

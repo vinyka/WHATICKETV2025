@@ -54,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  number: Yup.string().min(8, "Too Short!").max(50, "Too Long!"),
+    .min(2, "¡Demasiado corto!")
+    .max(50, "¡Demasiado largo!")
+    .required("Requerido"),
+  number: Yup.string().min(8, "¡Demasiado corto!").max(50, "¡Demasiado largo!"),
   email: Yup.string().email("Invalid email"),
 });
 
@@ -186,7 +186,7 @@ const ContactListItemModal = ({
                   name="number"
                   error={touched.number && Boolean(errors.number)}
                   helperText={touched.number && errors.number}
-                  placeholder="5513912344321"
+                  placeholder="001234567890"
                   variant="outlined"
                   margin="dense"
                 />

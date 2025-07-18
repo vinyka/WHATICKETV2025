@@ -406,7 +406,7 @@ function getDateLastMessage(contact) {
           color="primary"
           onClick={handleSelectAll}
       >
-          {selectAll ? "Desmarcar Todos" : "Marcar Todos"}
+          {selectAll ? "Deseleccionar todo" : "Marcar todo"}
         </Button>
 
       <Can
@@ -418,7 +418,7 @@ function getDateLastMessage(contact) {
               color="primary"
               onClick={handleDeleteSelectedContacts}
           >
-              {selectAll ? "Excluir Todos" : "Excluir"}
+              {selectAll ? "Eliminar todo" : "Borrar"}
           </Button>
       )}
       />	
@@ -524,7 +524,7 @@ function getDateLastMessage(contact) {
             </TableCell>
               <TableCell>{i18n.t("contacts.table.name")}</TableCell>
               <TableCell align="center">{i18n.t("contacts.table.whatsapp")}</TableCell>
-              <TableCell align="center">Messenger</TableCell>
+              <TableCell align="center">Facebook</TableCell>
               <TableCell align="center">Instagram</TableCell>
               <TableCell align="center">{i18n.t("contacts.table.email")}</TableCell>
               {/*<TableCell align="center">

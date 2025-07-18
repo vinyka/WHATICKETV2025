@@ -274,7 +274,7 @@ const ChartsRushHour = () => {
       setChartData(data);
     } catch (err) {
       console.log(err);
-      toast.error("Erro ao obter informações dos atendimentos");
+      toast.error("Error al obtener información del servicio");
     }
   }
 
@@ -335,10 +335,10 @@ const ChartsRushHour = () => {
     <Grid item xs={12} style={{ marginTop: 8, marginBottom: 8 }}>
       <Paper className={classes.fixedHeightPaper2}>
         <Typography component="h2" variant="h6" color="primary" gutterBottom>
-          Horário de Pico - Troca de mensagens
+          Horas pico - Intercambio de mensajes
         </Typography>
         <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-          Quantidade de mensagens recebidas e enviados em cada hora do dia.
+          Número de mensajes recibidos y enviados cada hora del día.
         </span>
         <Stack
           direction={"row"}

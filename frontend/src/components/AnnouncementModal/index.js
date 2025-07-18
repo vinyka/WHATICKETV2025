@@ -66,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AnnouncementSchema = Yup.object().shape({
-  title: Yup.string().required("Obrigatório"),
-  text: Yup.string().required("Obrigatório"),
+  title: Yup.string().required("Obligatorio"),
+  text: Yup.string().required("Obligatorio"),
 });
 
 const AnnouncementModal = ({ open, onClose, announcementId, reload }) => {
@@ -250,8 +250,8 @@ const AnnouncementModal = ({ open, onClose, announcementId, reload }) => {
                         name="status"
                         error={touched.status && Boolean(errors.status)}
                       >
-                        <MenuItem value={true}>Ativo</MenuItem>
-                        <MenuItem value={false}>Inativo</MenuItem>
+                        <MenuItem value={true}>Activo</MenuItem>
+                        <MenuItem value={false}>Inactivo</MenuItem>
                       </Field>
                     </FormControl>
                   </Grid>
@@ -271,9 +271,9 @@ const AnnouncementModal = ({ open, onClose, announcementId, reload }) => {
                         name="priority"
                         error={touched.priority && Boolean(errors.priority)}
                       >
-                        <MenuItem value={1}>Alta</MenuItem>
-                        <MenuItem value={2}>Média</MenuItem>
-                        <MenuItem value={3}>Baixa</MenuItem>
+                        <MenuItem value={1}>Alto</MenuItem>
+                        <MenuItem value={2}>Medio</MenuItem>
+                        <MenuItem value={3}>Bajo</MenuItem>
                       </Field>
                     </FormControl>
                   </Grid>

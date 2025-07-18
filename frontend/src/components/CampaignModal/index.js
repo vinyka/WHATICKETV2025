@@ -74,9 +74,9 @@ const useStyles = makeStyles((theme) => ({
 
 const CampaignSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(2, "¡Demasiado corto!")
+    .max(50, "¡Demasiado largo!")
+    .required("Requerido"),
 });
 
 const CampaignModal = ({
@@ -110,7 +110,7 @@ const CampaignModal = ({
     scheduledAt: "",
     whatsappId: "",
     contactListId: "",
-    tagListId: "Nenhuma",
+    tagListId: "Ninguno",
     companyId,
   };
 
@@ -171,7 +171,7 @@ const CampaignModal = ({
           setTagLists(formattedTagLists);
         })
         .catch((error) => {
-          console.error("Error retrieving tags:", error);
+          console.error("Error al recuperar etiquetas:", error);
         });
         
       if (!campaignId) return;
@@ -416,8 +416,8 @@ const CampaignModal = ({
                         }
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value={false}>Desabilitada</MenuItem>
-                        <MenuItem value={true}>Habilitada</MenuItem>
+                        <MenuItem value={false}>Desactivado</MenuItem>
+                        <MenuItem value={true}>Activado</MenuItem>
                       </Field>
                     </FormControl>
                   </Grid> */}
@@ -445,7 +445,7 @@ const CampaignModal = ({
                         }
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguno</MenuItem>
                         {contactLists &&
                           contactLists.map((contactList) => (
                             <MenuItem
@@ -478,7 +478,7 @@ const CampaignModal = ({
                         error={touched.tagListId && Boolean(errors.tagListId)}
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguno</MenuItem>
                         {Array.isArray(tagLists) &&
                           tagLists.map((tagList) => (
                             <MenuItem key={tagList.id} value={tagList.id}>
@@ -508,7 +508,7 @@ const CampaignModal = ({
                         error={touched.whatsappId && Boolean(errors.whatsappId)}
                         disabled={!campaignEditable}
                       >
-                        <MenuItem value="">Nenhuma</MenuItem>
+                        <MenuItem value="">Ninguno</MenuItem>
                         {whatsapps &&
                           whatsapps.map((whatsapp) => (
                             <MenuItem key={whatsapp.id} value={whatsapp.id}>
@@ -553,7 +553,7 @@ const CampaignModal = ({
                         labelId="fileListId-selection-label"
                         value={values.fileListId || ""}
                       >
-                        <MenuItem value={""} >{"Nenhum"}</MenuItem>
+                        <MenuItem value={""} >{"Ninguno"}</MenuItem>
                         {file.map(f => (
                           <MenuItem key={f.id} value={f.id}>
                             {f.name}
@@ -575,11 +575,11 @@ const CampaignModal = ({
                         borderRadius: 2,
                       }}
                     >
-                      <Tab label="Msg. 1" index={0} />
-                      <Tab label="Msg. 2" index={1} />
-                      <Tab label="Msg. 3" index={2} />
-                      <Tab label="Msg. 4" index={3} />
-                      <Tab label="Msg. 5" index={4} />
+                      <Tab label="Msj. 1" index={0} />
+                      <Tab label="Msj. 2" index={1} />
+                      <Tab label="Msj. 3" index={2} />
+                      <Tab label="Msj. 4" index={3} />
+                      <Tab label="Msj. 5" index={4} />
                     </Tabs>
                     <Box style={{ paddingTop: 20, border: "none" }}>
                       {messageTab === 0 && (

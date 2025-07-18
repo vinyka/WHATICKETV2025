@@ -117,7 +117,7 @@ export default function ChatPopover() {
     soundAlertRef.current = play;
 
     if (!("Notification" in window)) {
-      console.log("This browser doesn't support notifications");
+      console.log("Este navegador no admite notificaciones");
     } else {
       Notification.requestPermission();
     }

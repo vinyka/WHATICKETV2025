@@ -67,7 +67,7 @@ const Chart = ({ queueTicket }) => {
 
 	return (
 		<React.Fragment>
-			<Title>{`${"Atendimentos Criados: "}${count}`}</Title>
+			<Title>{`${"Servicios creados: "}${count}`}</Title>
 			<ResponsiveContainer>
 				<LineChart
 					data={chartData}
@@ -100,7 +100,7 @@ const Chart = ({ queueTicket }) => {
 								fill: theme.palette.text.primary,
 							}}
 						>
-							Tickets
+							Chats
 						</Label>
 					</YAxis>
 					<Line

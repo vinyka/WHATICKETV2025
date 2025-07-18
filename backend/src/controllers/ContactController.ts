@@ -196,7 +196,7 @@ export const remove = async (
     contactId
   });
 
-  return res.status(200).json({ message: "Contact deleted" });
+  return res.status(200).json({ message: "Contacto eliminado" });
 };
 
 export const list = async (req: Request, res: Response): Promise<Response> => {

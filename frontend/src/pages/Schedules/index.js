@@ -43,23 +43,23 @@ const eventTitleStyle = {
 
 const localizer = momentLocalizer(moment);
 var defaultMessages = {
-  date: "Data",
-  time: "Hora",
+  date: "Fecha",
+  time: "Tiempo",
   event: "Evento",
-  allDay: "Dia Todo",
+  allDay: "Todo el día",
   week: "Semana",
-  work_week: "Agendamentos",
-  day: "Dia",
-  month: "Mês",
+  work_week: "Equipo",
+  day: "Día",
+  month: "Mes",
   previous: "Anterior",
   next: "Próximo",
-  yesterday: "Ontem",
-  tomorrow: "Amanhã",
-  today: "Hoje",
-  agenda: "Agenda",
-  noEventsInRange: "Não há agendamentos no período.",
+  yesterday: "Ayer",
+  tomorrow: "Mañana",
+  today: "Hoy",
+  agenda: "Agendados",
+  noEventsInRange: "No hay citas durante este periodo.",
   showMore: function showMore(total) {
-    return "+" + total + " mais";
+    return "+" + total + " más";
   }
 };
 

@@ -55,7 +55,7 @@ export function StatusFilter({ onFiltered }) {
          <TextField
            {...params}
            variant="outlined"
-           placeholder="Filtro por Status"
+           placeholder="Filtrar por estado"
          />
        )}
       />

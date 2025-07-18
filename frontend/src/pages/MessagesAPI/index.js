@@ -47,7 +47,7 @@ const MessagesAPI = () => {
       const companyId = localStorage.getItem("companyId");
       const planConfigs = await getPlanCompany(undefined, companyId);
       if (!planConfigs.plan.useExternalApi) {
-        toast.error("Esta empresa não possui permissão para acessar essa página! Estamos lhe redirecionando.");
+        toast.error("¡Esta empresa no tiene permiso para acceder a esta página! Te estamos redireccionando.");
         setTimeout(() => {
           history.push(`/`)
         }, 1000);
@@ -74,7 +74,7 @@ const MessagesAPI = () => {
           'Authorization': `Bearer ${values.token}`
         }
       })
-      toast.success('Mensagem enviada com sucesso');
+      toast.success('Mensaje enviado exitosamente');
     } catch (err) {
       toastError(err);
     }
@@ -96,7 +96,7 @@ const MessagesAPI = () => {
           'Authorization': `Bearer ${values.token}`
         }
       })
-      toast.success('Mensagem enviada com sucesso');
+      toast.success('Mensaje enviado exitosamente');
     } catch (err) {
       toastError(err);
     }
@@ -258,71 +258,71 @@ const MessagesAPI = () => {
       variant="outlined"
     >
       <Typography variant="h5">
-        Documentação para envio de mensagens
+        Ddocumentación para enviar mensajes
       </Typography>
       <Typography variant="h6" color="primary" className={classes.elementMargin}>
-        Métodos de Envio
+        Métodos de envío
       </Typography>
       <Typography component="div">
         <ol>
-          <li>Mensagens de Texto</li>
-          <li>Mensagens de Media</li>
+          <li>Mensajes de texto</li>
+          <li>Mensajes de los medios</li>
         </ol>
       </Typography>
       <Typography variant="h6" color="primary" className={classes.elementMargin}>
         Instruções
       </Typography>
       <Typography className={classes.elementMargin} component="div">
-        <b>Observações importantes</b><br />
+        <b>Onotas importantes</b><br />
         <ul>
-          <li>Antes de enviar mensagens, é necessário o cadastro do token vinculado à conexão que enviará as mensagens. <br />Para realizar o cadastro acesse o menu "Conexões", clique no botão editar da conexão e insira o token no devido campo.</li>
+          <li>Antes de enviar mensajes, debes registrar el token. vinculado a la conexión que enviará los mensajes. <br/>Para registrarse, acceda al menú "Conexiones", haga clic en el botón editar conexión e inserte el token en el campo correspondiente.</li>
           <li>
-            O número para envio não deve ter mascara ou caracteres especiais e deve ser composto por:
+            El número de envío no debe tener máscara ni caracteres especiales y debe estar compuesto por:
             <ul>
-              <li>Código do país</li>
-              <li>DDD</li>
+              <li>Código del país</li>
+              <li>Area</li>
               <li>Número</li>
             </ul>
           </li>
         </ul>
       </Typography>
       <Typography variant="h6" color="primary" className={classes.elementMargin}>
-        1. Mensagens de Texto
+        1. Mensajes de texto
       </Typography>
       <Grid container>
         <Grid item xs={12} sm={6}>
           <Typography className={classes.elementMargin} component="div">
-            <p>Seguem abaixo a lista de informações necessárias para envio das mensagens de texto:</p>
+            <p>A continuación se muestra una lista de la información necesaria para enviar mensajes de texto:</p>
             <b>Endpoint: </b> {getEndpoint()} <br />
             <b>Método: </b> POST <br />
             <b>Headers: </b> Authorization (Bearer token) e Content-Type (application/json) <br />
-            <b>Body: </b> {"{ \"number\": \"595985523065\", \"body\": \"Sua mensagem\" }"}
+            <b>Body: </b> {"{ \"number\": \"00123456789\", \"body\": \"tu mensaje\" }"}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Typography className={classes.elementMargin}>
-            <b>Teste de Envio</b>
+            <b>Prueba de envío</b>
           </Typography>
           {renderFormMessageText()}
         </Grid>
       </Grid>
       <Typography variant="h6" color="primary" className={classes.elementMargin}>
-        2. Mensagens de Media
+        2. Mensajes de los medios
       </Typography>
       <Grid container>
         <Grid item xs={12} sm={6}>
           <Typography className={classes.elementMargin} component="div">
-            <p>Seguem abaixo a lista de informações necessárias para envio das mensagens de texto:</p>
+            <p>A continuación se muestra una lista de la información necesaria para enviar mensajes de texto.:</p>
             <b>Endpoint: </b> {getEndpoint()} <br />
             <b>Método: </b> POST <br />
-            <b>Headers: </b> Authorization (Bearer token) e Content-Type (multipart/form-data) <br />
+            <b>Headers: </b> Authorization (Bearer token) y Content-Type (multipart/form-data) <br />
             <b>FormData: </b> <br />
             <ul>
               <li>
-                <b>number: </b> 5599999999999
+                <b>número: </b> 001234567890
               </li>
               <li>
-                <b>medias: </b> arquivo
+                <b>promedios: </b> archivo
               </li>
             </ul>
           </Typography>

@@ -22,7 +22,7 @@ export default function DeleteButton({userProfile, ticket, setTickets}) {
 		try {
 			await api.delete(`/tickets/${ticket.id}`);
 			setTickets(prevTickets => prevTickets.filter(item => item.id !== ticket.id ))
-			toast.success("Ticket excluído com sucesso")
+			toast.success("Ticket eliminado exitosamente")
 		} catch (err) {
 			toastError(err);
 		}
@@ -34,7 +34,7 @@ export default function DeleteButton({userProfile, ticket, setTickets}) {
             role={userProfile}
             perform="ticket-options:deleteTicket"
             yes={() => (
-				<Tooltip title="Excluir atendimento">
+				<Tooltip title="Eliminar servicio">
 					<IconButton disableRipple edge="end" size="small" onClick={handleOpenConfirmationModal}>
 						<Trash size={16} color="#4d4d4d" />
 					</IconButton>

@@ -43,7 +43,7 @@ const FindOrCreateContactService = async (
   // Se o contato já existir, apenas atualizamos as informações
   if (contactExists) {
     await contactExists.update({
-      name: name || firstName || 'Name Unavailable',
+      name: name || firstName || 'Nombre no disponible',
       firstName,
       lastName,
       profilePicUrl: picture,
@@ -54,7 +54,7 @@ const FindOrCreateContactService = async (
 
   // Se o contato não existir, criamos um novo
   const newContact = await Contact.create({
-    name: name || firstName || 'Name Unavailable',
+    name: name || firstName || 'Nombre no disponible',
     number: null,  // Como você está criando o contato via Instagram ou Facebook, número pode ser null
     profilePicUrl: picture,
     messengerId: numberFb || null,

@@ -105,7 +105,7 @@ const ForwardMessageModal = ({ messages, onClose, modalOpen }) => {
 		if (optionL.number) {
 			return `${optionL.name} - ${optionL.number}`;
 		} else {
-			return `Nenhum contato encontrado com o nome ${optionL.name}`;
+			return `No se encontraron contactos con nombre ${optionL.name}`;
 		}
 	};
 
@@ -142,7 +142,7 @@ const ForwardMessageModal = ({ messages, onClose, modalOpen }) => {
 			></ContactModal>
 			<Dialog open={modalOpen} onClose={handleClose}>
 				<DialogTitle id="form-dialog-title">
-					Encaminhar mensagem
+					Reenviar mensaje
 				</DialogTitle>
 				<DialogContent dividers>
 					<Autocomplete
@@ -190,7 +190,7 @@ const ForwardMessageModal = ({ messages, onClose, modalOpen }) => {
 						<>
 							<CircularProgress color="inherit" size={20} />
 							<Typography variant="body1" color="textSecondary">
-								Enviando {messageSending}...
+								Envío {messageSending}...
 							</Typography>
 						</>
 					)}
@@ -218,7 +218,7 @@ const ForwardMessageModal = ({ messages, onClose, modalOpen }) => {
 						color="primary"
 						loading={loading}
 					>
-						Encaminhar
+						reenviar
 					</ButtonWithSpinner>
 				</DialogActions>
 			</Dialog>

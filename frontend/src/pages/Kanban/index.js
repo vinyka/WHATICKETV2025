@@ -76,7 +76,7 @@ const Kanban = () => {
     const lanes = [
       {
         id: "0",
-        title: <LaneTitle firstLane quantity={laneQuantities["0"]}>Em aberto</LaneTitle>,
+        title: <LaneTitle firstLane quantity={laneQuantities["0"]}>Abierto</LaneTitle>,
         cards: tickets.filter(ticket => ticket.tags.length === 0).map(ticket => ({
           id: ticket.id.toString(),
           title: <CardTitle ticket={ticket} userProfile={user.profile} />,

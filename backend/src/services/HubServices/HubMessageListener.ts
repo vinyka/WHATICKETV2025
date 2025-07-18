@@ -145,8 +145,8 @@ const HubMessageListener = async (
 
     // Se o companyId ainda for indefinido, lança erro
     if (!companyId) {
-      throw new Error("Erro: companyId não encontrado no contato, WhatsApp nem no Ticket.");
-      console.log("Erro: companyId não encontrado no contato, WhatsApp nem no Ticket.");
+      throw new Error("Erro: companyId No se encuentra en contacto, WhatsApp o Ticket.");
+      console.log("Erro: companyId No se encuentra en contacto, WhatsApp o Ticket.");
     }
     
     
@@ -167,7 +167,7 @@ const HubMessageListener = async (
 
   const io = getIO();
   const updatedTicket = await Ticket.findByPk(ticket.id, { include: ["contact"] });
-  console.log("Ticket atualizado após mensagem de texto:", updatedTicket);
+  console.log("Ticket actualizado después del mensaje de texto:", updatedTicket);
   if (updatedTicket) {
     io.to(updatedTicket.status)
     .to(ticket.id.toString())
@@ -175,7 +175,7 @@ const HubMessageListener = async (
       action: "update",
       ticket: updatedTicket
     });
-    console.log("Evento 'ticket' emitido para mensagem de texto:", {
+    console.log("Evento 'ticket' emitido para mensaje de texto:", {
       status: updatedTicket.status,
       ticketId: ticket.id.toString(),
       lastMessage: updatedTicket.lastMessage
@@ -206,7 +206,7 @@ const HubMessageListener = async (
 
     const io = getIO();
     const updatedTicket = await Ticket.findByPk(ticket.id, { include: ["contact"] });
-    console.log("Ticket atualizado após mensagem com arquivo:", updatedTicket);
+    console.log("Ticket actualizado después del mensaje con el archivo:", updatedTicket);
     if (updatedTicket) {
       io.to(updatedTicket.status)
       .to(ticket.id.toString())
@@ -214,7 +214,7 @@ const HubMessageListener = async (
         action: "update",
         ticket: updatedTicket
       });
-      console.log("Evento 'ticket' emitido para mensagem com arquivo:", {
+      console.log("Evento 'ticket' emitido para mensaje con archivo:", {
         status: updatedTicket.status,
         ticketId: ticket.id.toString(),
         lastMessage: updatedTicket.lastMessage

@@ -64,15 +64,15 @@ const useStyles = makeStyles((theme) => ({
 
 const DialogflowSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(2, "¡Demasiado corto!")
+    .max(50, "¡Demasiado largo!")
+    .required("Requerido"),
   // projectName: Yup.string()
-  //   .min(3, "Too Short!")
-  //   .max(100, "Too Long!")
+  //   .min(3, "¡Demasiado corto!")
+  //   .max(100, "¡Demasiado largo!")
   //   .required(),
-  // jsonContent: Yup.string().min(3, "Too Short!").required(),
-  // language: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required(),
+  // jsonContent: Yup.string().min(3, "¡Demasiado corto!").required(),
+  // language: Yup.string().min(2, "¡Demasiado corto!").max(50, "¡Demasiado largo!").required(),
 });
 
 
@@ -253,9 +253,10 @@ const QueueIntegration = ({ open, onClose, integrationId }) => {
                               id="language-selection"
                               required
                             >
-                              <MenuItem value="pt-BR">Portugues</MenuItem>
-                              <MenuItem value="en">Inglês</MenuItem>
                               <MenuItem value="es">Español</MenuItem>
+                              <MenuItem value="pt-BR">Portugues</MenuItem>
+                              <MenuItem value="en">Ingles</MenuItem>
+                              
                             </Field>
                           </FormControl>
                         </Grid>

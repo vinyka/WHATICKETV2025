@@ -82,7 +82,7 @@ export default function TicketMessagesDialog({ open, handleClose, ticketId }) {
 
             const queueAllowed = queues.find((q) => q.id === queueId);
             if (queueAllowed === undefined && profile !== "admin") {
-              toast.error("Acesso não permitido");
+              toast.error("Acceso no permitido");
               history.push("/tickets");
               return;
             }

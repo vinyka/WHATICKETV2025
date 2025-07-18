@@ -165,7 +165,7 @@ export const remove = async (
     whatsappId: +whatsappId
   });
 
-  return res.status(200).json({ message: "Whatsapp deleted." });
+  return res.status(200).json({ message: "WhatsApp eliminado." });
 };
 
 
@@ -181,5 +181,5 @@ export const restart = async (
 
   await restartWbot(companyId);
 
-  return res.status(200).json({ message: "Whatsapp restart." });
+  return res.status(200).json({ message: "reinicio de whatsapp." });
 };

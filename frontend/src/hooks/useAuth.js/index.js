@@ -131,13 +131,13 @@ const useAuth = () => {
         setIsAuth(true);
         toast.success(i18n.t("auth.toasts.success"));
         if (Math.round(dias) < 5) {
-          toast.warn(`Sua assinatura vence em ${Math.round(dias)} ${Math.round(dias) === 1 ? 'dia' : 'dias'} `);
+          toast.warn(`Su suscripción expira en ${Math.round(dias)} ${Math.round(dias) === 1 ? 'dia' : 'dias'} `);
         }
         history.push("/tickets");
         setLoading(false);
       } else {
-        toastError(`Opss! Sua assinatura venceu ${vencimento}.
-Entre em contato com o Suporte para mais informações! `);
+        toastError(`¡Ups! Su suscripción ha expirado ${vencimento}.
+¡Póngase en contacto con el soporte técnico para obtener más información! `);
         setLoading(false);
       }
 

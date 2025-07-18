@@ -32,18 +32,18 @@ export class SimpleObjectCache {
     // If a timer already exists for this key, clear it
     if (this.cache.has(key)) {
       clearTimeout(this.cache.get(key)!.timer);
-      this.logger?.debug(`Cache key ${key} was cleared`);
+      this.logger?.debug(`clave de caché ${key} fue aclarado`);
     }
 
     // Set a new timer
     const timer = setTimeout(() => {
       this.cache.delete(key);
-      this.logger?.debug(`Cache key ${key} was expired`);
+      this.logger?.debug(`clave de caché ${key} estaba caducado`);
     }, this.ttl);
 
     // Store the value and the timer in the cache
     this.cache.set(key, { value, timer });
-    this.logger?.debug(`Cache key ${key} was saved`);
+    this.logger?.debug(`clave de caché ${key} fue salvado`);
   }
 
   /**
@@ -58,7 +58,7 @@ export class SimpleObjectCache {
       return null;
     }
 
-    this.logger?.debug(`Cache key ${key} was accessed`);
+    this.logger?.debug(`clave de caché ${key} fue accedido`);
     return data.value;
   }
 }

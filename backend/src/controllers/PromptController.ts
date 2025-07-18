@@ -96,7 +96,7 @@ export const remove = async (
   try {
     const { count } = await Whatsapp.findAndCountAll({ where: { promptId: +promptId, companyId } });
 
-    if (count > 0) return res.status(200).json({ message: "Não foi possível excluir! Verifique se este prompt está sendo usado nas conexões Whatsapp!" });
+    if (count > 0) return res.status(200).json({ message: "¡No se pudo eliminar! Comprueba si este prompt ¡Se está utilizando en las conexiones de WhatsApp!" });
 
     await DeletePromptService(promptId, companyId);
 
@@ -106,9 +106,9 @@ export const remove = async (
       intelligenceId: +promptId
     });
 
-    return res.status(200).json({ message: "Prompt deleted" });
+    return res.status(200).json({ message: "Prompt eliminado" });
   } catch (err) {
-    return res.status(500).json({ message: "Não foi possível excluir! Verifique se este prompt está sendo usado!" });
+    return res.status(500).json({ message: "¡No se pudo eliminar! Comprueba si este prompt ¡Se está utilizando!" });
   }
 };
 

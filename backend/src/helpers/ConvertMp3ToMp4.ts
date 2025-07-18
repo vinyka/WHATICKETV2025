@@ -11,7 +11,7 @@ const convertMp3ToMp4 = (input: string, outputMP4: string): Promise<void> => {
     ffmpeg.setFfmpegPath(ffmpegPath);
 
     if (!fs.existsSync(input)) {
-      const errorMsg = `Input file does not exist: ${input}`;
+      const errorMsg = `El archivo de entrada no existe: ${input}`;
       console.error(errorMsg);
       return reject(new Error(errorMsg));
     }
@@ -24,14 +24,14 @@ const convertMp3ToMp4 = (input: string, outputMP4: string): Promise<void> => {
         console.log(`FFmpeg command: ${commandLine}`);
       })
       .on("error", (error: Error) => {
-        console.error("Error during conversion:", error);
+        console.error("Error durante la conversión:", error);
         reject(error);
       })
       .on("progress", (progress) => {
-        console.log(`Processing... ${progress.percent}% complete`);
+        console.log(`Tratamiento... ${progress.percent}% completo`);
       })
       .on("end", () => {
-        console.log("Transcoding succeeded !");
+        console.log("La transcodificación se realizó correctamente !");
         resolve();
       })
       .run();

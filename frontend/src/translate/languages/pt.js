@@ -1,4 +1,4 @@
-const messages = {
+const messages = { 
   pt: {
     translations: {
       signup: {

@@ -96,7 +96,7 @@ const HubNotificaMe = () => {
   const handleDeleteHubNotificaMe = async (HubNotificaMeId) => {
     try {
       await api.delete(`/hub-notificame/${HubNotificaMeId}`);
-      toast.success("Token deletado com sucesso!");
+      toast.success("Token eliminado con éxito!");
       fetchHubNotificaMe();
     } catch (err) {
       toastError(err);
@@ -122,11 +122,11 @@ const HubNotificaMe = () => {
       <MainHeader>
         <Grid container>
           <Grid xs={8} item>
-            <Title>Conexões Meta</Title>
+            <Title>Metaconexiones</Title>
           </Grid>
           <Grid xs={4} item>
             <Button variant="contained" onClick={handleOpenHubNotificaMeDialog} color="primary">
-              Adicionar
+              Agregar
             </Button>
           </Grid>
         </Grid>
@@ -135,10 +135,10 @@ const HubNotificaMe = () => {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell align="center">Nome do Canal</TableCell>
-              <TableCell align="center">Token do Canal - NotificaMe</TableCell>
+              <TableCell align="center">Nombre del canal</TableCell>
+              <TableCell align="center">Token del canal - NotificaMe</TableCell>
               <TableCell align="center">Canal</TableCell>
-              <TableCell align="center">Ações</TableCell>
+              <TableCell align="center">Acciones</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

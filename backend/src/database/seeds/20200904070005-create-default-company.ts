@@ -8,7 +8,7 @@ module.exports = {
           "Plans",
           [
             {
-              name: "Plano 1",
+              name: "Plan 1",
               users: 10,
               connections: 10,
               queues: 10,

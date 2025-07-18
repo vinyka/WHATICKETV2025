@@ -241,7 +241,7 @@ const Dashboard = () => {
     }
 
     if (Object.keys(params).length === 0) {
-      toast.error("Parametrize o filtro");
+      toast.error("Parametrizar el filtro");
       setLoading(false);
       return;
     }
@@ -266,14 +266,14 @@ const Dashboard = () => {
   }
 
   const handlePrint = useReactToPrint({
-    documentTitle: "Impressão do Dashboard",
+    documentTitle: "Impresión del tablero",
     copyStyles: true,
     onBeforePrint: () => {
       // console.log("before printing...");
       // setVisibleButtonsWithPrint(false);
     },
     onAfterPrint: () => {
-      console.log("after printing...");
+      console.log("después de imprimir...");
       setVisibleButtonsWithPrint(true);
     },
     removeAfterPrint: true,
@@ -306,7 +306,7 @@ const Dashboard = () => {
         <>
           <Grid item xs={12} sm={6} md={4}>
             <TextField
-              label="Data Inicial"
+              label="Fecha de inicio"
               type="date"
               value={dateFrom}
               onChange={(e) => setDateFrom(e.target.value)}
@@ -318,7 +318,7 @@ const Dashboard = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <TextField
-              label="Data Final"
+              label="Fecha de finalización"
               type="date"
               value={dateTo}
               onChange={(e) => setDateTo(e.target.value)}
@@ -341,7 +341,7 @@ const Dashboard = () => {
               value={period}
               onChange={(e) => handleChangePeriod(e.target.value)}
             >
-              <MenuItem value={0}>Nenhum selecionado</MenuItem>
+              <MenuItem value={0}>Ninguno seleccionado</MenuItem>
               <MenuItem value={3}>Últimos 3 dias</MenuItem>
               <MenuItem value={7}>Últimos 7 dias</MenuItem>
               <MenuItem value={15}>Últimos 15 dias</MenuItem>
@@ -349,7 +349,7 @@ const Dashboard = () => {
               <MenuItem value={60}>Últimos 60 dias</MenuItem>
               <MenuItem value={90}>Últimos 90 dias</MenuItem>
             </Select>
-            <FormHelperText>Selecione o período desejado</FormHelperText>
+            <FormHelperText>Seleccione el período deseado</FormHelperText>
           </FormControl>
         </Grid>
       );
@@ -368,7 +368,7 @@ const Dashboard = () => {
       <Grid container spacing={1} alignItems="center">
         <Grid item xs={8}>
           <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-            Conexões Ativas
+            Conexiones activas
           </Typography>
           <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
             {counters.totalWhatsappSessions}
@@ -409,7 +409,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          Em Conversa
+          En conversación
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {counters.supportHappening}
@@ -428,7 +428,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          Aguardando
+          Espera
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {counters.supportPending}
@@ -447,7 +447,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          Novos Contatos
+          Nuevos contactos
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {GetContacts(true)}
@@ -466,7 +466,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          T.M. de Conversa
+          T.M. de conversación
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {formatTime(counters.avgSupportTime)}
@@ -485,7 +485,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          Finalizados
+          Finalizado
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {counters.supportFinished}
@@ -514,7 +514,7 @@ const Dashboard = () => {
 				  variant="subtitle1" 
 				  className={classes.cardTitle}
 				>
-				  T.M. de Espera
+				  T.M. espera
 				</Typography>
 				<Typography 
 				  component="h1" 
@@ -538,16 +538,16 @@ const Dashboard = () => {
 		  		          {/* FILTROS */}
           <Grid item xs={12} sm={6} md={4}>
             <FormControl className={classes.selectContainer}>
-              <InputLabel id="period-selector-label">Tipo de Filtro</InputLabel>
+              <InputLabel id="period-selector-label">Tipo de filtro</InputLabel>
               <Select
                 labelId="period-selector-label"
                 value={filterType}
                 onChange={(e) => handleChangeFilterType(e.target.value)}
               >
-                <MenuItem value={1}>Filtro por Data</MenuItem>
-                <MenuItem value={2}>Filtro por Período</MenuItem>
+                <MenuItem value={1}>Filtrar por fecha</MenuItem>
+                <MenuItem value={2}>Filtrar por período</MenuItem>
               </Select>
-              <FormHelperText>Selecione o período desejado</FormHelperText>
+              <FormHelperText>Seleccione el período deseado</FormHelperText>
             </FormControl>
           </Grid>
 

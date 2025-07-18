@@ -59,7 +59,7 @@ export const downloadFiles = async (url: string, companyId: number, mediaType: s
         }
         filename = `${Date.now()}${extension}`;
       } catch (error) {
-        console.warn("Erro ao identificar imagem:", error.message);
+        console.warn("Error al identificar la imagen:", error.message);
         mimeType = "image/jpeg"; // Fallback seguro
         extension = ".jpg";
         filename = `${Date.now()}${extension}`;
@@ -90,7 +90,7 @@ export const downloadFiles = async (url: string, companyId: number, mediaType: s
       originalname,
     };
   } catch (error) {
-    console.error("Erro ao processar a requisição:", error);
+    console.error("Error al procesar la solicitud:", error);
     throw error;
   }
 };

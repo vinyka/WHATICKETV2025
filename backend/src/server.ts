@@ -44,7 +44,7 @@ process.on("unhandledRejection", (reason, p) => {
 
 cron.schedule("* * * * *", async () => {
   try {
-    logger.info(`Serviço de transferência de tickets iniciado`);
+    logger.info(`Se inició el servicio de transferencia de chat`);
     await TransferTicketQueue();
   } catch (error) {
     logger.error("Error in cron job:", error);

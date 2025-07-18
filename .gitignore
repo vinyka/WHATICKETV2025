@@ -1,0 +1,25 @@
+# Ignorar copias duplicadas
+frontend copy/
+backend copy/
+
+# Ignorar carpetas de dependencias
+**/node_modules/
+
+# Ignorar carpetas de build (React u otros)
+**/build/
+
+# Ignorar archivos de entorno
+**/.env
+**/.env.*
+
+# Ignorar archivos comprimidos y temporales
+*.zip
+*.log
+.DS_Store
+
+# Ignorar otros archivos temporales o editoriales
+*.swp
+*.tmp
+
+# Ignorar archivos personales de sistema
+Thumbs.db

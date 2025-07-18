@@ -44,17 +44,17 @@ export default function FooterButtons({ticket}) {
         <>
             <ContactNotesDialog modalOpen={contactNotesModal} onClose={handleCloseContactNotesModal} ticket={ticket} />
             <div className={classes.container}>
-                <Tooltip title="Anotações">
+                <Tooltip title="Notas">
                 <IconButton onClick={handleOpenContactNotesModal} size="small">
                     <BookOpen color={color} size={17} />
                 </IconButton>
                 </Tooltip>
-                <Tooltip title="Criar agendamento">
+                <Tooltip title="Crear horario">
                     <IconButton onClick={handleOpenScheduleModal} size="small">
                         <Calendar color={color} size={17} />
                     </IconButton>
                 </Tooltip>
-                <Tooltip title="Ir para conversa">   
+                <Tooltip title="Ir a la conversación">   
                     <IconButton onClick={handleSelectTicket} size="small">
                         <WhatsAppIcon style={{color: color}} fontSize="small" />
                     </IconButton>

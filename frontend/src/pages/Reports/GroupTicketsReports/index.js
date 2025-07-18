@@ -87,7 +87,7 @@ const GroupTicketsReports = () => {
   const formateDate = (date) => {
     const parseDate = parseISO(date);
     const data = format(parseDate, " dd'/'MM'/'yyyy '-' HH:mm'h'", {
-      timeZone: 'America/Sao_Paulo',
+      timeZone: 'America/Bogota',
     });
     return data;
   };
@@ -106,7 +106,7 @@ const GroupTicketsReports = () => {
       // console.log(date);
       // console.log(totalData);
       if (totalData > 1000) {
-        toast.info('Gerando relatório compactado, por favor aguarde.');
+        toast.info('Generando informe comprimido, por favor espere.');
         const filesArray = [];
         const pdfPages = Math.ceil(totalData / 500);
 
@@ -148,7 +148,7 @@ const GroupTicketsReports = () => {
 
         saveAs(
           zip,
-          `topzap_atenditmentos_grupos_${formattedDate}_compact_report.zip`
+          `whatsapp_atenciones_grupos_${formattedDate}_compact_report.zip`
         );
         setPdfLoading(false);
         return;
@@ -174,12 +174,12 @@ const GroupTicketsReports = () => {
           groupTicket
         />
       ).toBlob();
-      saveAs(blob, `topzap_atendimentos_grupo_${formattedDate}_report.pdf`);
+      saveAs(blob, `whatsapp_atenciones_grupo_${formattedDate}_report.pdf`);
 
       setPdfLoading(false);
     } catch (error) {
       setPdfLoading(false);
-      toast.error('Erro ao gerar o relatório');
+      toast.error('Error al generar informe');
       console.log(error);
     }
   }, [dateEndParam, dateStartParam, queryClient, totalData]);
@@ -201,12 +201,12 @@ const GroupTicketsReports = () => {
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleBack}>
             <ChevronLeft />
-            <span style={{ fontSize: '1rem' }}>Voltar</span>
+            <span style={{ fontSize: '1rem' }}>para volver</span>
           </IconButton>
         </div>
       </Box>
       <MainHeader>
-        <Title>Relatório de Atendimento em Grupos</Title>
+        <Title>Informe de servicio grupal</Title>
 
         <MainHeaderButtonsWrapper>
           <TextField
@@ -227,7 +227,7 @@ const GroupTicketsReports = () => {
             variant="contained"
           >
             {pdfLoading ? (
-              <div style={{ width: 100 }}>Carregando...</div>
+              <div style={{ width: 100 }}>Cargando...</div>
             ) : (
               <>
                 <div style={{ marginLeft: 6 }}>{i18n.t('Exportar')}</div>
@@ -250,12 +250,12 @@ const GroupTicketsReports = () => {
             <TableHead>
               <TableRow>
                 <TableCell align="center"> Ticket </TableCell>
-                <TableCell align="center"> Contato </TableCell>
+                <TableCell align="center"> Contacto </TableCell>
                 <TableCell align="center"> WhatsApp </TableCell>
-                <TableCell align="center"> Data Abertura </TableCell>
-                <TableCell align="center"> Data Última Atualização </TableCell>
-                <TableCell align="center"> Quem atendeu </TableCell>
-                <TableCell align="center"> Status </TableCell>
+                <TableCell align="center"> Fecha de apertura </TableCell>
+                <TableCell align="center"> Fecha de última actualización </TableCell>
+                <TableCell align="center"> quien respondio </TableCell>
+                <TableCell align="center"> Estado </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

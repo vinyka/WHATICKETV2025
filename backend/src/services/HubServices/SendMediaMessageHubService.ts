@@ -19,7 +19,7 @@ export const SendMediaMessageService = async (
 ) => {
   const ticket = await Ticket.findOne({ where: { id: ticketId } });
   if (!ticket) {
-    throw new Error("Ticket não encontrado");
+    throw new Error("Ticket extraviado");
   }
 
   const companyId = ticket.companyId;
@@ -81,7 +81,7 @@ export const SendMediaMessageService = async (
       media.originalname = convertedFilename;
       media.mimetype = "video"; // Define como "video" para ambos
     } catch (error) {
-      console.error(`Erro ao converter vídeo para ${type}:`, error);
+      console.error(`Error al convertir el vídeo a ${type}:`, error);
     }
   } else if (media.mimetype.includes("image")) {
     if (type === "telegram") {
@@ -109,7 +109,7 @@ export const SendMediaMessageService = async (
       media.originalname = media.filename;
       media.mimetype = "audio";
     } catch (e) {
-      console.error("Erro ao converter MP3 para Instagram:", e);
+      console.error("Error al convertir MP3 a Instagram:", e);
     }
   }
 

@@ -53,7 +53,7 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
   const schema = Yup.object().shape({
     nome: Yup.string().required(),
     token: Yup.string().required(),
-    tipo: Yup.string().oneOf(["Facebook", "Instagram"], "Tipo inválido").required("Tipo é obrigatório"), // Validação do tipo
+    tipo: Yup.string().oneOf(["Facebook", "Instagram"], "tipo no válido").required("Se requiere tipo"), // Validação do tipo
   });
 
   try {
@@ -134,7 +134,7 @@ export const remove = async (
     id
   });
 
-  return res.status(200).json({ message: "Contact deleted" });
+  return res.status(200).json({ message: "Contacto eliminado" });
 };
 
 export const findList = async (

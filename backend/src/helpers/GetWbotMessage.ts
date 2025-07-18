@@ -30,7 +30,7 @@ export const GetWbotMessage = async (
     const msgFound = await fetchWbotMessagesGradually();
 
     if (!msgFound) {
-      throw new Error("Cannot found message within 100 last messages");
+      throw new Error("No se puede encontrar el mensaje dentro de los últimos 100 mensajes");
     }
 
     return msgFound;

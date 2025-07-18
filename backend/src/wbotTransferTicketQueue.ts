@@ -71,7 +71,7 @@ export const TransferTicketQueue = async (): Promise<void> => {
           traking: "created ticket 33"
         });
 
-      logger.info(`Transferencia de ticket automatica ticket id ${ticket.id} para a fila ${wpp.transferQueueId}`);
+      logger.info(`Transferencia automática de tickets ID de ticket ${ticket.id} al departamento ${wpp.transferQueueId}`);
 
     }
 

@@ -51,7 +51,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Gráfico de Conversas",
+      text: "Gráfico de conversación",
       position: "left",
     },
     datalabels: {
@@ -115,14 +115,14 @@ export const ChatsUser = () => {
       );
       setTicketsData(data);
     } catch (error) {
-      toast.error("Erro ao obter informações da conversa");
+      toast.error("Error al obtener información de la conversación");
     }
   };
 
   return (
     <>
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
-        Total de Conversas por Usuários
+        Conversaciones totales por usuarios
       </Typography>
 
       <Stack direction={"row"} spacing={2} alignItems={"center"} sx={{ my: 2 }}>
@@ -135,7 +135,7 @@ export const ChatsUser = () => {
             onChange={(newValue) => {
               setInitialDate(newValue);
             }}
-            label="Inicio"
+            label="Comenzar"
             renderInput={(params) => (
               <TextField fullWidth {...params} sx={{ width: "20ch" }} />
             )}
@@ -151,7 +151,7 @@ export const ChatsUser = () => {
             onChange={(newValue) => {
               setFinalDate(newValue);
             }}
-            label="Fim"
+            label="Fin"
             renderInput={(params) => (
               <TextField fullWidth {...params} sx={{ width: "20ch" }} />
             )}

@@ -140,7 +140,7 @@ export const remove = async (req: Request, res: Response): Promise<Response> => 
     userId
   });
 
-  return res.status(200).json({ message: "User deleted" });
+  return res.status(200).json({ message: "Usuario eliminado" });
 };
 
 export const list = async (req: Request, res: Response): Promise<Response> => {

@@ -271,7 +271,7 @@ const ChartsDepartamentRatings = () => {
       setChartData(data);
     } catch (err) {
       console.log(err);
-      toast.error("Erro ao obter informações dos atendimentos");
+      toast.error("Error al obtener información del servicio");
     }
   }
 
@@ -330,10 +330,10 @@ const ChartsDepartamentRatings = () => {
     <Grid item xs={12} style={{ marginTop: 8, marginBottom: 8 }}>
       <Paper className={classes.fixedHeightPaper2}>
         <Typography component="h2" variant="h6" color="primary" gutterBottom>
-          Avaliações por Departamento/Fila
+          Evaluaciones por departamento/departamentos
         </Typography>
         <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-          Quantidade de mensagens recebidas e enviados em cada hora do dia.
+          Número de mensajes recibidos y enviados cada hora del día.
         </span>
         <Stack
           direction={"row"}

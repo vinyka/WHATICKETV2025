@@ -268,7 +268,7 @@ const ChartsAppointmentsAtendent = () => {
       setTicketsData(data);
     } catch (err) {
       console.log(err);
-      toast.error("Erro ao obter informações dos atendimentos");
+      toast.error("Error al obtener información del servicio");
     }
   }
 
@@ -278,7 +278,7 @@ const ChartsAppointmentsAtendent = () => {
       : [],
     datasets: [
       {
-        label: "Número de Atendimentos",
+        label: "Número de servicios",
         data: ticketsData.appointmentsByAttendents
           ? ticketsData.appointmentsByAttendents.map(
               (item) => item.total_tickets
@@ -301,7 +301,7 @@ const ChartsAppointmentsAtendent = () => {
       : [],
     datasets: [
       {
-        label: "Número de Atendimentos",
+        label: "Número de servicios",
         data: ticketsData.ticketsByQueues
           ? ticketsData.ticketsByQueues.map((item) => item.total_tickets)
           : 0,
@@ -345,10 +345,10 @@ const ChartsAppointmentsAtendent = () => {
       <Paper className={classes.fixedHeightPaper2}>
         <Grid item xs={6} className={classes.fixedGridPaper3}>
           <Typography component="h2" variant="h6" color="primary" gutterBottom>
-            Atendimentos por Atendentes
+            Servicio por parte de los asistentes
           </Typography>
           <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-            Saiba quais são os atendentes mais produtivos
+            Descubra qué agentes son los más productivos
           </span>
           <Stack
             direction={"row"}
@@ -365,7 +365,7 @@ const ChartsAppointmentsAtendent = () => {
                 onChange={(newValue) => {
                   setInitialDate(newValue);
                 }}
-                label="Inicio"
+                label="Comenzar"
                 renderInput={(params) => (
                   <TextField fullWidth {...params} sx={{ width: "20ch" }} />
                 )}
@@ -405,11 +405,11 @@ const ChartsAppointmentsAtendent = () => {
 
         <Grid item xs={6} className={classes.fixedGridPaper3}>
           <Typography component="h2" variant="h6" color="primary" gutterBottom>
-            Atendimentos por Departamentos/Filas
+            Servicios por Departamentos/Departamentos
           </Typography>
 
           <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-            Saiba quais são os departamentos mais procurados
+            Descubra qué departamentos son los más solicitados
           </span>
           <Stack
             direction={"row"}

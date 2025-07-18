@@ -26,7 +26,7 @@ const EditWhatsAppMessage = async ({
   });
   
   if (!message) {
-    throw new AppError("No message found with this ID.");
+    throw new AppError("No se encontró ningún mensaje con este ID.");
   }
 
   const { ticket } = message;

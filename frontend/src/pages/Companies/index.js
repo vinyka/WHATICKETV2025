@@ -55,11 +55,11 @@ const useStyles = makeStyles(theme => ({
 
 const UserSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(2, "Too Short!")
-		.max(50, "Too Long!")
-		.required("Required"),
-	password: Yup.string().min(5, "Too Short!").max(50, "Too Long!"),
-	email: Yup.string().email("Invalid email").required("Required"),
+		.min(2, "¡Demasiado corto!")
+		.max(50, "¡Demasiado largo!")
+		.required("Requerido"),
+	password: Yup.string().min(5, "¡Demasiado corto!").max(50, "¡Demasiado largo!"),
+	email: Yup.string().email("Invalid email").required("Requerido"),
 });
 
 const SignUp = () => {
@@ -138,7 +138,7 @@ const SignUp = () => {
 										variant="outlined"
 										fullWidth
 										id="name"
-										label="Nome da Empresa"
+										label="Nombre de empresa"
 									/>
 								</Grid>
 
@@ -175,7 +175,7 @@ const SignUp = () => {
 											{...field}
 											variant="outlined"
 											fullWidth
-											label="DDD988888888"
+											label="00123456789"
 											inputProps={{ maxLength: 11 }} // Definindo o limite de caracteres
 										/>
 									)}
@@ -197,13 +197,13 @@ const SignUp = () => {
 									/>
 								</Grid>
 								<Grid item xs={12}>
-									<InputLabel htmlFor="plan-selection">Plano</InputLabel>
+									<InputLabel htmlFor="plan-selection">Plan</InputLabel>
 									<Field
 										as={Select}
 										variant="outlined"
 										fullWidth
 										id="plan-selection"
-										label="Plano"
+										label="Plan"
 										name="planId"
 										required
 									>

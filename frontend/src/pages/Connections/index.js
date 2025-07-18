@@ -125,7 +125,7 @@ const Connections = () => {
     // const companyId = localStorage.getItem("companyId");
     try {
       await api.post(`/whatsapp-restart/`);
-      toast.warn(i18n.t("Aguarde... reiniciando..."));
+      toast.warn(i18n.t("Por favor espere... reiniciando..."));
     } catch (err) {
       toastError(err);
     }
@@ -380,7 +380,7 @@ const renderStatusToolTips = whatsApp => {
             					color="primary"
             					onClick={restartWhatsapps}
           					>
-            					{i18n.t("REINICIAR CONEXÕES")}
+            					{i18n.t("RESTABLECER CONEXIONES")}
           					</Button>*/}
 							</>
 						)}
@@ -391,7 +391,7 @@ const renderStatusToolTips = whatsApp => {
 				<Table size="small">
 					<TableHead>
 						<TableRow>
-							<TableCell align="center">{i18n.t("Nome")}</TableCell>
+							<TableCell align="center">{i18n.t("Nombre")}</TableCell>
 							<TableCell align="center">{i18n.t("connections.table.number")}</TableCell>							
 							<TableCell align="center">{i18n.t("connections.table.status")}</TableCell>
 							<Can
@@ -426,8 +426,8 @@ const renderStatusToolTips = whatsApp => {
 											<TableCell align="center">
 											  {whatsApp.number ? (
 												<>
-												  {console.log("Número do WhatsApp:", whatsApp.number)}
-												  {console.log("Número formatado:", formatSerializedId(whatsApp.number))}
+												  {console.log("numero whatsap:", whatsApp.number)}
+												  {console.log("Número formateado:", formatSerializedId(whatsApp.number))}
 												  {formatSerializedId(whatsApp.number)}
 												</>
 											  ) : (

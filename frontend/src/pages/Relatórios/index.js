@@ -211,7 +211,7 @@ const Relatorios = () => {
 
     return (
       <TableCell align="center" className={classes.connectionTag} style={{ backgroundColor }}>
-        {ticket?.queueName === null ? 'SEM FILA' :ticket?.queueName }
+        {ticket?.queueName === null ? 'SIN DEPARTAMENTO' :ticket?.queueName }
       </TableCell>
     );
   }
@@ -267,8 +267,8 @@ const Relatorios = () => {
 
       const ws = XLSX.utils.json_to_sheet(data.tickets);
       const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'RelatorioDeAtendimentos');
-      XLSX.writeFile(wb, 'relatorio-de-atendimentos.xlsx');
+      XLSX.utils.book_append_sheet(wb, ws, 'ReporteDeAtenciones');
+      XLSX.writeFile(wb, 'reporte-de-atenciones.xlsx');
 
 
       setPageNumber(pageNumber); // Atualiza o estado da página atual
@@ -339,7 +339,7 @@ const Relatorios = () => {
         setUserIds(users);
         
       }else if(!userVerify){
-        toastError('Você não tem permissão para filtrar tickets de outros usuários')
+        toastError('No tienes permiso para filtrar tickets de otros usuarios.s')
         setUserIds([]);
       }else if(userVerify && user.profile === 'user'){
         console.log('entrei2')
@@ -429,7 +429,7 @@ const Relatorios = () => {
             </Grid>
             <Grid item xs={12} sm={3} md={3}>
               <TextField
-                label="Data Inicial"
+                label="Fecha de inicio"
                 type="date"
                 value={dateFrom}
                 variant="outlined"
@@ -443,7 +443,7 @@ const Relatorios = () => {
             </Grid>
             <Grid item xs={12} sm={3} md={3}>
               <TextField
-                label="Data Final"
+                label="Fecha de finalización"
                 type="date"
                 value={dateTo}
                 variant="outlined"
@@ -530,7 +530,7 @@ const Relatorios = () => {
                         />
 					</Tooltip>*/}
 
-                      <Tooltip title="Acessar Ticket">
+                      <Tooltip title="Acceder al Ticket">
                         <VisibilityIcon
                           onClick={() => { history.push(`/tickets/${ticket.uuid}`) }}
                           fontSize="small"

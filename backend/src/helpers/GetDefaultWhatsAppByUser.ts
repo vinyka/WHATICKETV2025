@@ -10,7 +10,7 @@ const GetDefaultWhatsAppByUser = async (
     return null;
   }
 
-  logger.info(`Found whatsapp linked to user '${user.name}' is '${user.whatsapp.name}'.`);
+  logger.info(`Se encontró WhatsApp vinculado al usuario. '${user.name}' es '${user.whatsapp.name}'.`);
 
   return user.whatsapp;
 };

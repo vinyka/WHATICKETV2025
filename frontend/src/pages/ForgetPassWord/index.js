@@ -110,15 +110,15 @@ const handleSendEmail = async (values) => {
     const response = await api.post(
       `${process.env.REACT_APP_BACKEND_URL}/forgetpassword/${email}`
     );
-    console.log("API Response:", response.data);
+    console.log("Respuesta API:", response.data);
 
     if (response.data.status === 404) {
-      toast.error("Email não encontrado");
+      toast.error("Correo electrónico no encontrado");
     } else {
-      toast.success(i18n.t("Email enviado com sucesso!"));
+      toast.success(i18n.t("¡Correo electrónico enviado exitosamente!"));
     }
   } catch (err) {
-    console.log("API Error:", err);
+    console.log("Error de API:", err);
     toastError(err);
   }
 };
@@ -135,7 +135,7 @@ const handleSendEmail = async (values) => {
           `${process.env.REACT_APP_BACKEND_URL}/resetpasswords/${email}/${token}/${newPassword}`
         );
         setError(""); // Limpe o erro se não houver erro
-        toast.success(i18n.t("Senha redefinida com sucesso."));
+        toast.success(i18n.t("Restablecimiento de contraseña exitoso."));
         history.push("/login");
       } catch (err) {
         console.log(err);
@@ -145,20 +145,20 @@ const handleSendEmail = async (values) => {
 
   const isResetPasswordButtonClicked = showResetPasswordButton;
   const UserSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Required"),
+    email: Yup.string().email("Invalid email").required("Requerido"),
     newPassword: isResetPasswordButtonClicked
       ? Yup.string()
-          .required("Campo obrigatório")
+          .required("Campo obligatorio")
           .matches(
             passwordRegex,
-            "Sua senha precisa ter no mínimo 8 caracteres, sendo uma letra maiúscula, uma minúscula e um número."
+            "Su contraseña debe tener al menos 8 caracteres, incluida una letra mayúscula, una letra minúscula y un número."
           )
       : Yup.string(), // Sem validação se não for redefinição de senha
     confirmPassword: Yup.string().when("newPassword", {
       is: (newPassword) => isResetPasswordButtonClicked && newPassword,
       then: Yup.string()
-        .oneOf([Yup.ref("newPassword"), null], "As senhas não correspondem")
-        .required("Campo obrigatório"),
+        .oneOf([Yup.ref("newPassword"), null], "Las contraseñas no coinciden")
+        .required("Campo obligatorio"),
       otherwise: Yup.string(), // Sem validação se não for redefinição de senha
     }),
   });
@@ -176,7 +176,7 @@ const handleSendEmail = async (values) => {
             />
           </div>
           <Typography component="h1" variant="h5">
-            {i18n.t("Redefinir senha")}
+            {i18n.t("Restablecer contraseña")}
           </Typography>
           <Formik
             initialValues={{
@@ -224,7 +224,7 @@ const handleSendEmail = async (values) => {
                           variant="outlined"
                           fullWidth
                           id="token"
-                          label="Código de Verificação"
+                          label="Código de verificación"
                           name="token"
                           error={touched.token && Boolean(errors.token)}
                           helperText={touched.token && errors.token}
@@ -239,7 +239,7 @@ const handleSendEmail = async (values) => {
                           fullWidth
                           type={showPassword ? "text" : "password"}
                           id="newPassword"
-                          label="Nova senha"
+                          label="Nueva contraseña"
                           name="newPassword"
                           error={
                             touched.newPassword &&
@@ -274,7 +274,7 @@ const handleSendEmail = async (values) => {
                           fullWidth
                           type={showConfirmPassword ? "text" : "password"}
                           id="confirmPassword"
-                          label="Confirme a senha"
+                          label="Confirmar Contraseña"
                           name="confirmPassword"
                           error={
                             touched.confirmPassword &&
@@ -314,7 +314,7 @@ const handleSendEmail = async (values) => {
                     color="primary"
                     className={classes.submit}
                   >
-                    Redefinir Senha
+                    Restablecer contraseña
                   </Button>
                 ) : (
                   <Button
@@ -335,7 +335,7 @@ const handleSendEmail = async (values) => {
                       component={RouterLink}
                       to="/signup"
                     >
-                      {i18n.t("Não tem uma conta? Cadastre-se!")}
+                      {i18n.t("¿No tienes una cuenta? ¡Inscribirse!")}
                     </Link>
                   </Grid>
                 </Grid>

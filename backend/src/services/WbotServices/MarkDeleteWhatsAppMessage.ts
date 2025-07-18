@@ -42,7 +42,7 @@ const MarkDeleteWhatsAppMessage = async (from: any, timestamp?: any, msgId?: str
 
 
 
-        await UpdateTicketService({ ticketData: { lastMessage: "🚫 _Mensagem Apagada_" }, ticketId: ticket.id, companyId })
+        await UpdateTicketService({ ticketData: { lastMessage: "🚫 _Mensaje eliminado_" }, ticketId: ticket.id, companyId })
 
         const io = getIO();
         io.of(companyId.toString())
@@ -53,7 +53,7 @@ const MarkDeleteWhatsAppMessage = async (from: any, timestamp?: any, msgId?: str
           });
       }
     } catch (err) {
-      console.log("Erro ao tentar marcar a mensagem com excluída")
+      console.log("Error al intentar marcar el mensaje como eliminado")
     }
 
     return timestamp;

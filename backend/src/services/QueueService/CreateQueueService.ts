@@ -34,7 +34,7 @@ const CreateQueueService = async (queueData: QueueData): Promise<Queue> => {
     });
 
     if (queuesCount >= company.plan.queues) {
-      throw new AppError(`Número máximo de filas já alcançado: ${queuesCount}`);
+      throw new AppError(`Ya se alcanzó el número máximo de departamentos: ${queuesCount}`);
     }
   }
 

@@ -57,14 +57,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const PromptSchema = Yup.object().shape({
-    name: Yup.string().min(5, "Muito curto!").max(100, "Muito longo!").required("Obrigatório"),
-    prompt: Yup.string().min(50, "Muito curto!").required("Descreva o treinamento para Inteligência Artificial"),
-    voice: Yup.string().required("Informe o modo para Voz"),
-    max_tokens: Yup.number().required("Informe o número máximo de tokens"),
-    temperature: Yup.number().required("Informe a temperatura"),
-    apikey: Yup.string().required("Informe a API Key"),
-    queueId: Yup.number().required("Informe a fila"),
-    max_messages: Yup.number().required("Informe o número máximo de mensagens")
+    name: Yup.string().min(5, "¡Demasiado corto!").max(100, "¡Demasiado tiempo!").required("Obligatorio"),
+    prompt: Yup.string().min(50, "¡Demasiado corto!").required("Describe el entrenamiento para la Inteligencia Artificial"),
+    voice: Yup.string().required("Establezca el modo en Voz"),
+    max_tokens: Yup.number().required("Introduzca el número máximo de tokens"),
+    temperature: Yup.number().required("Introduzca la temperatura"),
+    apikey: Yup.string().required("Introduzca al API Key"),
+    queueId: Yup.number().required("Introduzca el departamento"),
+    max_messages: Yup.number().required("Introduzca el número máximo de mensajes")
 });
 
 const PromptModal = ({ open, onClose, promptId }) => {
@@ -124,7 +124,7 @@ const PromptModal = ({ open, onClose, promptId }) => {
     const handleSavePrompt = async values => {
         const promptData = { ...values, voice: selectedVoice };
         if (!values.queueId) {
-            toastError("Informe o setor");
+            toastError("Introduzca el departamento");
             return;
         }
         try {
@@ -226,50 +226,47 @@ const PromptModal = ({ open, onClose, promptId }) => {
                                             <MenuItem key={"texto"} value={"texto"}>
                                                 Texto
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-FranciscaNeural"} value={"pt-BR-FranciscaNeural"}>
-                                                Francisa
+                                            <MenuItem key={"es-MX-DaliaNeural"} value={"es-MX-DaliaNeural"}>
+                                                Dalia MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-AntonioNeural"} value={"pt-BR-AntonioNeural"}>
-                                                Antônio
+                                            <MenuItem key={"es-MX-JorgeNeural"} value={"es-MX-JorgeNeural"}>
+                                                Jorge MX - voz masculina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-BrendaNeural"} value={"pt-BR-BrendaNeural"}>
-                                                Brenda
+                                            <MenuItem key={"es-MX-BeatrizNeural"} value={"es-MX-BeatrizNeural"}>
+                                                Beatriz MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-DonatoNeural"} value={"pt-BR-DonatoNeural"}>
-                                                Donato
+                                            <MenuItem key={"es-MX-CandelaNeural"} value={"es-MX-CandelaNeural"}>
+                                                Candela MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-ElzaNeural"} value={"pt-BR-ElzaNeural"}>
-                                                Elza
+                                            <MenuItem key={"es-MX-CarlotaNeural"} value={"es-MX-CarlotaNeural"}>
+                                                Carlota MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-FabioNeural"} value={"pt-BR-FabioNeural"}>
-                                                Fábio
+                                            <MenuItem key={"es-MX-CecilioNeural"} value={"es-MX-CecilioNeural"}>
+                                                Cecilio MX - voz masculina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-GiovannaNeural"} value={"pt-BR-GiovannaNeural"}>
-                                                Giovanna
+                                            <MenuItem key={"es-MX-GerardoNeural"} value={"es-MX-GerardoNeural"}>
+                                                Gerardo MX - voz masculina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-HumbertoNeural"} value={"pt-BR-HumbertoNeural"}>
-                                                Humberto
+                                            <MenuItem key={"es-MX-LarissaNeural"} value={"es-MX-LarissaNeural"}>
+                                                Larissa MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-JulioNeural"} value={"pt-BR-JulioNeural"}>
-                                                Julio
+                                            <MenuItem key={"es-MX-LucianoNeural"} value={"es-MX-LucianoNeural"}>
+                                                Luciano MX - voz masculina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-LeilaNeural"} value={"pt-BR-LeilaNeural"}>
-                                                Leila
+                                            <MenuItem key={"es-MX-MarinaNeural"} value={"es-MX-MarinaNeural"}>
+                                                Marina MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-LeticiaNeural"} value={"pt-BR-LeticiaNeural"}>
-                                                Letícia
+                                            <MenuItem key={"es-MX-PelayoNeural"} value={"es-MX-PelayoNeural"}>
+                                                Pelayo MX - voz masculina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-ManuelaNeural"} value={"pt-BR-ManuelaNeural"}>
-                                                Manuela
+                                            <MenuItem key={"es-MX-NuriaNeural"} value={"es-MX-NuriaNeural"}>
+                                                Nuria MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-NicolauNeural"} value={"pt-BR-NicolauNeural"}>
-                                                Nicolau
+                                            <MenuItem key={"es-MX-RenataNeural"} value={"es-MX-RenataNeural"}>
+                                                Renata MX - voz femenina
                                             </MenuItem>
-                                            <MenuItem key={"pt-BR-ValerioNeural"} value={"pt-BR-ValerioNeural"}>
-                                                Valério
-                                            </MenuItem>
-                                            <MenuItem key={"pt-BR-YaraNeural"} value={"pt-BR-YaraNeural"}>
-                                                Yara
+                                            <MenuItem key={"es-MX-YagoNeural"} value={"es-MX-YagoNeural"}>
+                                                Yago MX - voz masculina
                                             </MenuItem>
                                         </Select>
                                     </FormControl>

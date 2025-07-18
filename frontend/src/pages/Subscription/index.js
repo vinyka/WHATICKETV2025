@@ -74,7 +74,7 @@ const Contacts = () => {
       ></SubscriptionModal>
 
       <MainHeader>
-        <Title>Assinatura</Title>
+        <Title>Firma</Title>
       </MainHeader>
       <Grid item xs={12} sm={4}>
         <Paper
@@ -87,7 +87,7 @@ const Contacts = () => {
             <TextField
               id="outlined-full-width"
               label="Período de teste"
-              defaultValue={`Seu período de teste termina em ${_formatDate(user?.company?.trialExpiration)} dias!`}
+              defaultValue={`Su período de prueba termina en ${_formatDate(user?.company?.trialExpiration)} dias!`}
               fullWidth
               margin="normal"
               InputLabelProps={{
@@ -104,7 +104,7 @@ const Contacts = () => {
           <div>
             <TextField
               id="outlined-full-width"
-              label="Email de cobrança"
+              label="Email de cargar"
               defaultValue={user?.company?.email}
               fullWidth
               margin="normal"
@@ -126,7 +126,7 @@ const Contacts = () => {
               onClick={handleOpenContactModal}
               fullWidth
             >
-              Assine Agora!
+              ¡Suscríbete ahora!
             </Button>
           </div>
 

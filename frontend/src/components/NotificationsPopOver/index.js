@@ -85,7 +85,7 @@ const NotificationsPopOver = (volume) => {
 		soundAlertRef.current = play;
 
 		if (!("Notification" in window)) {
-			console.log("This browser doesn't support notifications");
+			console.log("Este navegador no admite notificaciones");
 		} else {
 			Notification.requestPermission();
 		}
@@ -207,7 +207,7 @@ const NotificationsPopOver = (volume) => {
 		});
 	
 	} catch (e) {
-		console.error("Failed to push browser notification");
+		console.error("No se pudo enviar la notificación del navegador");
 	  }
 
 		soundAlertRef.current();

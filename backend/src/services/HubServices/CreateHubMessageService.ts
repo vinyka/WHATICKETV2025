@@ -53,7 +53,7 @@ const CreateMessageService = async (messageData: MessageData): Promise<Message |
     data.mediaType = mediaType === "photo" ? "image" : mediaType;
     data.body = data.mediaUrl;
 
-    console.log("MEDIA TYPE DENTRO DO CREATEHUBMESSAGESERVICE:", data.mediaType);
+    console.log("TIPO DE MEDIO DENTRO DEL CREATEHUBMESSAGESERVICE:", data.mediaType);
   }
 
   try {
@@ -61,7 +61,7 @@ const CreateMessageService = async (messageData: MessageData): Promise<Message |
     const newMessage = await Message.create(data); // Salvando a mensagem no banco de dados
 
     // LOG: Verificar a nova mensagem criada
-    console.log("Nova mensagem criada:", newMessage);
+    console.log("Nuevo mensaje creado:", newMessage);
 
     const message = await Message.findByPk(messageData.id, {
       include: [
@@ -86,7 +86,7 @@ const CreateMessageService = async (messageData: MessageData): Promise<Message |
       ]
     });
 
-    console.log("Mensagem buscada do banco:", message);
+    console.log("Mensaje obtenido del banco:", message);
 
     if (message.ticket.queueId !== null && message.queueId === null) {
       await message.update({ queueId: message.ticket.queueId });
@@ -99,7 +99,7 @@ const CreateMessageService = async (messageData: MessageData): Promise<Message |
 
     if (message) {
 
-      console.log("Mensagem emitida pelo WebSocket:", {
+      console.log("Mensaje emitido por WebSocket:", {
         action: "create",
         message,
         ticket: message.ticket,
@@ -122,7 +122,7 @@ const CreateMessageService = async (messageData: MessageData): Promise<Message |
 
     return message;
   } catch (error) {
-    console.error("Erro ao criar mensagem:", error);
+    console.error("Error al crear mensaje:", error);
     return null;
   }
 };

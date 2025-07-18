@@ -111,7 +111,7 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
         // Return the ContactList ID
         return contactListId;
       } catch (error) {
-        console.error('Error creating contact list:', error);
+        console.error('Error al crear la lista de contactos:', error);
         throw error;
       }
     }
@@ -133,7 +133,7 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
       })
       .catch((error) => {
         console.error('Error:', error);
-        return res.status(500).json({ error: 'Error creating contact list' });
+        return res.status(500).json({ error: 'Error al crear la lista de contactos' });
       });
 
   } else { // SAI DO CHECK DE TAG
@@ -203,7 +203,7 @@ export const cancel = async (
 
   await CancelService(+id);
 
-  return res.status(204).json({ message: "Cancelamento realizado" });
+  return res.status(204).json({ message: "Cancelación realizada" });
 };
 
 export const restart = async (
@@ -214,7 +214,7 @@ export const restart = async (
 
   await RestartService(+id);
 
-  return res.status(204).json({ message: "Reinício dos disparos" });
+  return res.status(204).json({ message: "Reinicio del rodaje" });
 };
 
 export const remove = async (
@@ -232,7 +232,7 @@ export const remove = async (
     id
   });
 
-  return res.status(200).json({ message: "Campaign deleted" });
+  return res.status(200).json({ message: "Campaña eliminada" });
 };
 
 export const findList = async (
@@ -258,7 +258,7 @@ export const mediaUpload = async (
     campaign.mediaPath = file.filename;
     campaign.mediaName = file.originalname;
     await campaign.save();
-    return res.send({ mensagem: "Mensagem enviada" });
+    return res.send({ mensagem: "Mensaje enviado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }
@@ -282,7 +282,7 @@ export const deleteMedia = async (
     campaign.mediaPath = null;
     campaign.mediaName = null;
     await campaign.save();
-    return res.send({ mensagem: "Arquivo excluído" });
+    return res.send({ mensagem: "Archivo eliminado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }

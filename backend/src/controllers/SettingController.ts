@@ -81,7 +81,7 @@ export const mediaUpload = async (
   const requestUser = await User.findByPk(userId);
 
   if (requestUser.super === false) {
-    throw new AppError("você nao tem permissão para esta ação!");
+    throw new AppError("¡No tienes permiso para esta acción!");
   }
 
   if (req.user.profile !== "admin") {
@@ -95,7 +95,7 @@ export const mediaUpload = async (
   const files = req.files as Express.Multer.File[];
   const file = head(files);
   console.log(file);
-  return res.send({ mensagem: "Arquivo Anexado" });
+  return res.send({ mensagem: "Archivo adjunto" });
 };
 
 
@@ -110,7 +110,7 @@ export const certUpload = async (
   const requestUser = await User.findByPk(userId);
 
   if (requestUser.super === false) {
-    throw new AppError("você nao tem permissão para esta ação!");
+    throw new AppError("¡No tienes permiso para esta acción!");
   }
 
   if (req.user.profile !== "admin") {
@@ -124,7 +124,7 @@ export const certUpload = async (
   const files = req.files as Express.Multer.File[];
   const file = head(files);
   console.log(file);
-  return res.send({ mensagem: "Arquivo Anexado" });
+  return res.send({ mensagem: "Archivo adjunto" });
 };
 
 
@@ -140,7 +140,7 @@ export const docUpload = async (
   const requestUser = await User.findByPk(userId);
 
   if (requestUser.super === false) {
-    throw new AppError("você nao tem permissão para esta ação!");
+    throw new AppError("¡No tienes permiso para esta acción!");
   }
 
   if (req.user.profile !== "admin") {
@@ -154,5 +154,5 @@ export const docUpload = async (
   const files = req.files as Express.Multer.File[];
   const file = head(files);
   console.log(file);
-  return res.send({ mensagem: "Arquivo Anexado" });
+  return res.send({ mensagem: "Archivo adjunto" });
 };

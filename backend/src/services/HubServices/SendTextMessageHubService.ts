@@ -18,7 +18,7 @@ export const SendTextMessageService = async (
   const ticket = await Ticket.findOne({ where: { id: ticketId } });
 
   if (!ticket) {
-    throw new Error("Ticket não encontrado");
+    throw new Error("Ticket extraviado");
   }
 
   const companyId = ticket.companyId; // Agora temos o companyId
@@ -88,7 +88,7 @@ await Ticket.update(
 
 const io = getIO();
 const updatedTicket = await Ticket.findByPk(ticketId, { include: ["contact"] });
-console.log("Ticket atualizado após envio do atendente:", updatedTicket);
+console.log("Ticket actualizado después de que el asistente envió:", updatedTicket);
 if (updatedTicket) {
   io.to(updatedTicket.status)
     .to(ticketId.toString())
@@ -97,7 +97,7 @@ if (updatedTicket) {
       message: newMessage,
       ticket: updatedTicket
     });
-  console.log("Evento 'message' emitido para envio:", {
+  console.log("Evento 'message' emitido para el envío:", {
     status: updatedTicket.status,
     ticketId: ticketId.toString(),
     lastMessage: updatedTicket.lastMessage
@@ -109,7 +109,7 @@ if (updatedTicket) {
     action: "update",
     ticket: updatedTicket
   });
-  console.log("Evento 'ticket' emitido para envio:", {
+  console.log("Evento 'ticket' emitido para el envío:", {
     status: updatedTicket.status,
     ticketId: ticketId.toString(),
     lastMessage: updatedTicket.lastMessage

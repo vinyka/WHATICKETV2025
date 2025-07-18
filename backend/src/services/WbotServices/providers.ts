@@ -81,7 +81,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
           const isCPFCNPJ = validaCpfCnpj(numberCPFCNPJ)
           if (isCPFCNPJ) {
             const textMessage = {
-              text: formatBody(`Aguarde! Estamos consultando na base de dados!`, contact),
+              text: formatBody(`¡Esperar! ¡Estamos consultando la base de datos!`, contact),
             };
             try {
               await sleep(2000)
@@ -113,13 +113,13 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                   .then(async function (response) {
                     if (response.data == 'NULL') {
                       const textMessage = {
-                        text: formatBody(`Cadastro não localizado! *CPF/CNPJ* incorreto ou inválido. Tenta novamente!`, contact),
+                        text: formatBody(`¡Registro no encontrado! *CPF/CNPJ* incorrecto o inválido. ¡Intentar otra vez!`, contact),
                       };
                       try {
                         await sleep(2000)
                         await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, textMessage);
                       } catch (error) {
-                        console.log('Não consegui enviar a mensagem!')
+                        console.log('¡No pude enviar el mensaje!')
                       }
                     } else {
                       let nome
@@ -256,7 +256,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                   })
                   .catch(async function (error) {
                     try {
-                      const bodyBoleto = { text: formatBody(`Não consegui encontrar seu cadastro.\n\nPor favor tente novamente!\nOu digite *#* para voltar ao *Menu Anterior*`, contact) };
+                      const bodyBoleto = { text: formatBody(`No pude encontrar su registro.\n\nPor favor tente novamente!\nOu digite *#* para voltar ao *Menu Anterior*`, contact) };
                       await sleep(2000)
                       await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, bodyBoleto);
                     } catch (error) {
@@ -266,11 +266,11 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
                   });
               })
               .catch(async function (error) {
-                const bodyfinaliza = { text: formatBody(`Opss! Algo de errado aconteceu! Digite *#* para voltar ao menu anterior e fale com um atendente!`, contact) };
+                const bodyfinaliza = { text: formatBody(`¡Ups! ¡Algo malo pasó! ¡Escribe *#* para volver al menú anterior y hablar con un asistente!`, contact) };
                 await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, bodyfinaliza);
               });
           } else {
-            const body = { text: formatBody(`Este CPF/CNPJ não é válido!\n\nPor favor tente novamente!\nOu digite *#* para voltar ao *Menu Anterior*`, contact) };
+            const body = { text: formatBody(`¡Este CPF/CNPJ no es válido!\n\n¡Por favor inténtalo de nuevo!\nO escriba *#* para volver a *Menu Anterior*`, contact) };
             await sleep(2000)
             await wbot.sendMessage(`${ticket.contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`, body);
           }
@@ -284,7 +284,7 @@ export const provider = async (ticket: Ticket, msg: proto.IWebMessageInfo, compa
           const isCPFCNPJ = validaCpfCnpj(numberCPFCNPJ)
           if (isCPFCNPJ) {
             const body = {
-              text: formatBody(`Aguarde! Estamos consultando na base de dados!`, contact),
+              text: formatBody(`¡Esperar! ¡Estamos consultando la base de datos!`, contact),
             };
             try {
               await sleep(2000)

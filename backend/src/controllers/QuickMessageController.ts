@@ -137,7 +137,7 @@ export const remove = async (
     id
   });
 
-  return res.status(200).json({ message: "Contact deleted" });
+  return res.status(200).json({ message: "Contacto eliminado" });
 };
 
 export const findList = async (
@@ -166,7 +166,7 @@ export const mediaUpload = async (
       mediaName: file.originalname
     });
 
-    return res.send({ mensagem: "Arquivo Anexado" });
+    return res.send({ mensagem: "Archivo adjunto" });
     } catch (err: any) {
       throw new AppError(err.message);
   }
@@ -185,7 +185,7 @@ export const deleteMedia = async (
 
     // Verifique se a mensagem foi encontrada
     if (!quickmessage) {
-      throw new AppError("Arquivo não encontrado", 404);
+      throw new AppError("Archivo no encontrado", 404);
     }
 
     // Aplique a mesma lógica de renomeação para gerar o nome correto do arquivo
@@ -216,7 +216,7 @@ export const deleteMedia = async (
       mediaName: null
     });
 
-    return res.send({ mensagem: "Arquivo Excluído" });
+    return res.send({ mensagem: "Archivo eliminado" });
   } catch (err: any) {
     throw new AppError(err.message);
   }

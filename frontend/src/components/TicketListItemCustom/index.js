@@ -213,7 +213,7 @@ const useStyles = makeStyles((theme) => ({
   const [verpreview, setverpreview] = useState(false);
   const { profile } = user;
   const [transferTicketModalOpen, setTransferTicketModalOpen] = useState(false);
-  const presenceMessage = { composing: "Digitando...", recording: "Gravando..." };
+  const presenceMessage = { composing: "Escribiendo...", recording: "Grabando..." };
   
   useEffect(() => {
     if (ticket.userId && ticket.user) {
@@ -272,16 +272,16 @@ const useStyles = makeStyles((theme) => ({
 
 
       if (minutesDifference >= 3 && minutesDifference <= 10) {
-        labelText = `(${minutesDifference} m atrás)`;
+        labelText = `(${minutesDifference} m atras)`;
         labelColor = 'green';
       } else if (minutesDifference >= 30 && minutesDifference < 60) {
-        labelText = `(${minutesDifference} m atrás)`;
+        labelText = `(${minutesDifference} m atras)`;
         labelColor = 'Orange';
       } else if (minutesDifference > 60  && hoursDifference < 24) {
-        labelText = `(${hoursDifference} h atrás)`;
+        labelText = `(${hoursDifference} h atras)`;
         labelColor = 'red';
       } else if (hoursDifference >= 24) {
-        labelText = `(${Math.floor(hoursDifference / 24)} dias atrás)`;
+        labelText = `(${Math.floor(hoursDifference / 24)} hace dias)`;
         labelColor = 'red';
       }
 
@@ -366,12 +366,12 @@ const useStyles = makeStyles((theme) => ({
   
       const handleSendMessage = async (id) => {
         
-        const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
+        const msg = `{{ms}} *{{name}}*, mi nombre es *${user?.name}* ¡Y ahora continuaré con vuestro servicio!`;
         const message = {
             read: 1,
             fromMe: true,
             mediaUrl: "",
-            body: `*Mensagem Automática:*\n${msg.trim()}`,
+            body: `*Mensaje automático:*\n${msg.trim()}`,
         };
         try {
             await api.post(`/messages/${id}`, message);
@@ -457,7 +457,7 @@ const useStyles = makeStyles((theme) => ({
           [classes.pendingTicket]: ticket.status === "pending",
         })}
       >
-        <Tooltip arrow placement="right" title={ticket.queue?.name?.toUpperCase() || "SEM FILA"} >
+        <Tooltip arrow placement="right" title={ticket.queue?.name?.toUpperCase() || "SIN DEPARTAMENTO"} >
           <span style={{ backgroundColor: ticket.queue?.color || "#7C7C7C" }} className={classes.ticketQueueColor}></span> 
         </Tooltip>       
 
@@ -581,7 +581,7 @@ const useStyles = makeStyles((theme) => ({
                       ) : <br />}
 
                       <Badge style={{ backgroundColor: ticket.queue?.color || "#7c7c7c" }} className={classes.connectionTag}>
-                        {ticket.queue?.name?.toUpperCase() || "SEM FILA"}
+                        {ticket.queue?.name?.toUpperCase() || "SIN DEPARTAMENTO"}
                       </Badge>
 
                     </span>

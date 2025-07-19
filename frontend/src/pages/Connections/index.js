@@ -360,7 +360,7 @@ const renderStatusToolTips = whatsApp => {
 				whatsAppId={!qrModalOpen && selectedWhatsApp?.id}
 			/>
 			<MainHeader>
-				<Title>{i18n.t("Multicanais")}</Title>
+				<Title>{i18n.t("connections.title")}</Title>
 				<MainHeaderButtonsWrapper>
 					<Can
 						role={user.profile}

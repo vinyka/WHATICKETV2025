@@ -487,8 +487,8 @@ const messages = {
       mainDrawer: {
         listItems: {
           dashboard: "Panel",
-          connections: "Conexiones",
-          tickets: "Atendimientos",
+          connections: "QRConnect",
+          tickets: "Chats",
           quickMessages: "Respuestas Rápidas",
           contacts: "Contactos",
           queues: "Departamentos",
@@ -509,6 +509,9 @@ const messages = {
           reports: "Reportes",
           queueIntegration: "Integraciones",
         },
+        connections: {
+  title: "Multicanal"
+},
         appBar: {
           notRegister: "Sin notificaciones",
           user: {

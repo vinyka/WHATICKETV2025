@@ -6,12 +6,12 @@ import makeWASocket, {
   DisconnectReason,
   fetchLatestBaileysVersion,
   makeCacheableSignalKeyStore,
-  makeInMemoryStore,
   isJidBroadcast,
   WAMessageKey,
   jidNormalizedUser,
   CacheStore
 } from "@whiskeysockets/baileys";
+import makeInMemoryStore from "@whiskeysockets/baileys";
 import { Op } from "sequelize";
 import { FindOptions } from "sequelize/types";
 import Whatsapp from "../models/Whatsapp";
@@ -160,11 +160,12 @@ export const initWASocket = async (whatsapp: Whatsapp): Promise<Session> => {
         let retriesQrCode = 0;
 
         let wsocket: Session = null;
-        const store = makeInMemoryStore({
-          logger: loggerBaileys
-        });
-
         const { state, saveState } = await authState(whatsapp);
+
+        const store = makeInMemoryStore({
+          logger: loggerBaileys,
+          auth: state
+        });
 
         //const msgRetryCounterCache = new NodeCache();
         const userDevicesCache: CacheStore = new NodeCache();
@@ -383,7 +384,7 @@ export const initWASocket = async (whatsapp: Whatsapp): Promise<Session> => {
           }
         );
 
-        store.bind(wsocket.ev);
+        // store.bind(wsocket.ev); // Removed because 'bind' does not exist on the store object
       })();
     } catch (error) {
       Sentry.captureException(error);

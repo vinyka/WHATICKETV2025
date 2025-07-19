@@ -545,15 +545,14 @@ const MainListItems = (props) => {
               />
 
               <ListItemLink
-              to="/connections"
-              //primary={i18n.t("mainDrawer.listItems.connections")}
-              primary="Multicanal"
-              icon={
-                <Badge badgeContent={connectionWarning ? "!" : null} color="error">
-                  <LanIcon />
-                </Badge>
-              }
-            /> 
+                to="/connections"
+                primary={i18n.t("mainDrawer.listItems.connections")}
+                icon={
+                  <Badge badgeContent={connectionWarning ? "!" : null} color="error">
+                    <LanIcon />
+                  </Badge>
+                }
+              />
 
             <ListItemLink
               small

@@ -80,7 +80,7 @@
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts start",
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 react-scripts start",
     "build": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && NODE_OPTIONS=--openssl-legacy-provider GENERATE_SOURCEMAP=false react-scripts build",
     "builddev": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts build",
     "test": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts test",
@@ -102,6 +102,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "cross-env": "^7.0.3"
   }
 }

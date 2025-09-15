@@ -51,7 +51,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Gráfico de conversación",
+      text: "Gráfico de conversa",
       position: "left",
     },
     datalabels: {
@@ -115,7 +115,7 @@ export const ChatsUser = () => {
       );
       setTicketsData(data);
     } catch (error) {
-      toast.error("Error al obtener información de la conversación");
+      toast.error("Erro ao obter informações da conversa");
     }
   };
 

@@ -271,7 +271,7 @@ export function QueueOptionStepper({ queueId, options, updateOptions }) {
             onChange={(event) => handleOptionChangeMessage(event, index)}
             size="small"
             className={classes.input}
-            placeholder="Introduzca el texto de la opción"
+            placeholder="Insira o texto da opção"
           />
         </>
       );

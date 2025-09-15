@@ -617,11 +617,11 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
         return (
           <center>
             <div className={classes.ticketNunberClosed}>
-              La conversación terminó: {format(parseISO(messagesList[index - 1].createdAt), "dd/MM/yyyy HH:mm:ss")}
+              A conversa terminou: {format(parseISO(messagesList[index - 1].createdAt), "dd/MM/yyyy HH:mm:ss")}
             </div>
 
             <div className={classes.ticketNunberOpen}>
-              Conversación iniciada: {format(parseISO(message.createdAt), "dd/MM/yyyy HH:mm:ss")}
+              Conversa iniciada: {format(parseISO(message.createdAt), "dd/MM/yyyy HH:mm:ss")}
             </div>
           </center>
         );

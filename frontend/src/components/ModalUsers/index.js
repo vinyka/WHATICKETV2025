@@ -58,11 +58,11 @@ const useStyles = makeStyles((theme) => ({
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "¡Demasiado corto!")
-    .max(50, "¡Demasiado largo!")
-    .required("Requerido"),
-  password: Yup.string().min(5, "¡Demasiado corto!").max(50, "¡Demasiado largo!"),
-  email: Yup.string().email("Invalid email").required("Requerido"),
+    .min(2, "Muito curto!")
+    .max(50, "Muito longo!")
+    .required("Obrigatório"),
+  password: Yup.string().min(5, "Muito curto!").max(50, "Muito longo!"),
+  email: Yup.string().email("Email inválido").required("Obrigatório"),
 });
 
 const ModalUsers = ({ open, onClose, userId, companyId }) => {

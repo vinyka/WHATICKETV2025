@@ -361,7 +361,7 @@ const Campaigns = () => {
                   <TableCell align="center">
                     {campaign.completedAt
                       ? datetimeToClient(campaign.completedAt)
-                      : "No completado"}
+                      : "Não completado"}
                   </TableCell>
                   {/* <TableCell align="center">
                     {campaign.confirmation ? "Activado" : "Desactivado"}

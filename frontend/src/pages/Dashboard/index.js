@@ -409,7 +409,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          En conversación
+          Em conversa
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {counters.supportHappening}
@@ -466,7 +466,7 @@ const Dashboard = () => {
     <Grid container spacing={1} alignItems="center">
       <Grid item xs={8}>
         <Typography component="h3" variant="subtitle1" className={classes.cardTitle}>
-          T.M. de conversación
+          T.M. de conversa
         </Typography>
         <Typography component="h1" variant="h6" className={classes.cardSubtitle}>
           {formatTime(counters.avgSupportTime)}

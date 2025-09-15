@@ -66,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AnnouncementSchema = Yup.object().shape({
-  title: Yup.string().required("Obligatorio"),
-  text: Yup.string().required("Obligatorio"),
+  title: Yup.string().required("Obrigatório"),
+  text: Yup.string().required("Obrigatório"),
 });
 
 const AnnouncementModal = ({ open, onClose, announcementId, reload }) => {

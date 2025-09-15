@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const HubNotificaMeSchema = Yup.object().shape({
-    token: Yup.string().required("Obligatorio"),
-    tipo: Yup.string().oneOf(["Facebook", "Instagram"], "tipo no válido").required("Obligatorio"),
+    token: Yup.string().required("Obrigatório"),
+    tipo: Yup.string().oneOf(["Facebook", "Instagram"], "tipo não válido").required("Obrigatório"),
 });
 
 const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {

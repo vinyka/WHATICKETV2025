@@ -2,8 +2,13 @@ import i18n from "i18next";
 
 import { messages } from "./languages";
 
-// Força o idioma para português no localStorage antes de inicializar
+// Limpa completamente qualquer configuração anterior
+localStorage.removeItem('i18nextLng');
+sessionStorage.removeItem('i18nextLng');
+
+// Força o idioma para português
 localStorage.setItem('i18nextLng', 'pt');
+sessionStorage.setItem('i18nextLng', 'pt');
 
 i18n.init({
 	debug: false,
@@ -17,9 +22,7 @@ i18n.init({
 	}
 });
 
-// Log para verificar se as mensagens estão carregadas corretamente
-console.log('i18n initialized with language:', i18n.language);
-console.log('Available resources:', Object.keys(messages));
-console.log('Portuguese messages loaded:', !!messages.pt);
+// Força o idioma após a inicialização
+i18n.changeLanguage('pt');
 
 export { i18n };

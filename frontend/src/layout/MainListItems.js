@@ -319,7 +319,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Atenciones")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("mainDrawer.listItems.tickets")} </Typography>
             </ListSubheader>
             <>
 
@@ -342,7 +342,7 @@ const MainListItems = (props) => {
               )}
               <ListItemLink
                 to="/todolist"
-                primary={i18n.t("Tareas")}
+                primary="Tarefas"
                 icon={<BorderColorIcon />}
               />
               <ListItemLink
@@ -403,7 +403,7 @@ const MainListItems = (props) => {
               inset
               color="inherit">
 
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Gestión")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  Gestão </Typography>
             </ListSubheader>
 
             <ListItemLink
@@ -415,7 +415,7 @@ const MainListItems = (props) => {
 			
 			<ListItemLink
 				to="/relatorios"
-				primary={i18n.t("Reportes")}
+				primary={i18n.t("mainDrawer.listItems.reports")}
 				icon={<SearchIcon />}
 			/>
 			
@@ -440,20 +440,20 @@ const MainListItems = (props) => {
                   }}
                   inset
                   color="inherit">
-                  <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Campañas")} </Typography>
+                  <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("mainDrawer.listItems.campaigns")} </Typography>
                 </ListSubheader>
 
                 <ListItemLink
                   small
                   to="/campaigns"
-                  primary={i18n.t("Listado")}
+                  primary="Listagem"
                   icon={<ListIcon />}
                 />
 
                 <ListItemLink
                   small
                   to="/contact-lists"
-                  primary={i18n.t("Listas de contactos")}
+                  primary="Listas de Contatos"
                   icon={<PeopleIcon />}
                 />
 
@@ -461,7 +461,7 @@ const MainListItems = (props) => {
                 <ListItemLink
                   small
                   to="/campaigns-config"
-                  primary={i18n.t("Ajustes")}
+                  primary="Configurações"
                   icon={<ListIcon />}
                 />
 
@@ -535,7 +535,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Multiconexiones")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  Multiconexões </Typography>
             </ListSubheader>
 
             <ListItemLink
@@ -587,7 +587,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Administracion")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  Administração </Typography>
             </ListSubheader>
 
             {user.super && (
@@ -636,7 +636,7 @@ const MainListItems = (props) => {
               }}
               inset
               color="inherit">
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Sistema")} </Typography>
+              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  Sistema </Typography>
             </ListSubheader>
 			)}
 			
@@ -644,7 +644,7 @@ const MainListItems = (props) => {
               <React.Fragment>
                 <Divider />
               <Typography style={{ fontSize: "12px", padding: "10px", textAlign: "right", fontWeight: "bold" }}>
-                Versión: 1.1.0
+                Versão: 1.1.0
 
                 </Typography>
               </React.Fragment>
@@ -663,7 +663,7 @@ const MainListItems = (props) => {
           <ListItemIcon>
             <RotateRight />
           </ListItemIcon>
-          <ListItemText primary={i18n.t("Sair")} />
+          <ListItemText primary="Sair" />
         </ListItem>
       </li>
     </div>

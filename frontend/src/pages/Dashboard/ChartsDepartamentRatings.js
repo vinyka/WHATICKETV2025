@@ -271,7 +271,7 @@ const ChartsDepartamentRatings = () => {
       setChartData(data);
     } catch (err) {
       console.log(err);
-      toast.error("Error al obtener información del servicio");
+      toast.error("Erro ao obter informações do serviço");
     }
   }
 

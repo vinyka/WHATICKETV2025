@@ -64,8 +64,8 @@ const useStyles = makeStyles(theme => ({
 
 const TagSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(3, "mensaje muy corto")
-		.required("Obligatorio")
+		.min(3, "mensagem muito curta")
+		.required("Obrigatório")
 });
 
 const TagModal = ({ open, onClose, tagId, reload }) => {

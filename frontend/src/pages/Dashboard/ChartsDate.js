@@ -39,7 +39,7 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Gráfico de conversación',
+            text: 'Gráfico de conversa',
             position: 'left',
         },
         datalabels: {
@@ -105,7 +105,7 @@ export const ChartsDate = () => {
             const { data } = await api.get(`/dashboard/ticketsDay?initialDate=${format(initialDate, 'yyyy-MM-dd')}&finalDate=${format(finalDate, 'yyyy-MM-dd')}&companyId=${companyId}`);
             setTicketsData(data);
         } catch (error) {
-            toast.error('Error al obtener la información del ticket');
+            toast.error('Erro ao obter informações do ticket');
         }
     }
 

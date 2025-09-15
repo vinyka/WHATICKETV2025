@@ -30,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
 
 const NoteSchema = Yup.object().shape({
 	note: Yup.string()
-		.min(2, "¡Demasiado corto!")
-        .max(254, "¡Demasiado largo!")
-		.required("Requerido")
+		.min(2, "Muito curto!")
+        .max(254, "Muito longo!")
+		.required("Obrigatório")
 });
 
 export default function ContactNotesDialog ({ modalOpen, onClose, ticket }) {

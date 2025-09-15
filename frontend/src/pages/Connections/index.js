@@ -125,7 +125,7 @@ const Connections = () => {
     // const companyId = localStorage.getItem("companyId");
     try {
       await api.post(`/whatsapp-restart/`);
-      toast.warn(i18n.t("Por favor espere... reiniciando..."));
+      toast.warn("Por favor aguarde... reiniciando...");
     } catch (err) {
       toastError(err);
     }

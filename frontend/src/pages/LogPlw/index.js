@@ -37,7 +37,7 @@ const VersionLog = () => {
         setVersionLog(parsedLog);
         setLoading(false);
       } catch (error) {
-        setError('Error al cargar el registro de versión.');
+        setError('Erro ao carregar o registro de versão.');
         setLoading(false);
       }
     };

@@ -58,9 +58,9 @@ const useStyles = makeStyles(theme => ({
 */  
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "¡Demasiado corto!")
-    .max(50, "¡Demasiado largo!")
-    .required("Requerido"),
+    .min(2, "Muito curto!")
+    .max(50, "Muito longo!")
+    .required("Obrigatório"),
   /*number: Yup.string()
     .min(12, "Número inválido")
     .max(16, "Número inválido")

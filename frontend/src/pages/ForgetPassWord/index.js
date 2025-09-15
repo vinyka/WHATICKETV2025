@@ -145,10 +145,10 @@ const handleSendEmail = async (values) => {
 
   const isResetPasswordButtonClicked = showResetPasswordButton;
   const UserSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Requerido"),
+    email: Yup.string().email("Email inválido").required("Obrigatório"),
     newPassword: isResetPasswordButtonClicked
       ? Yup.string()
-          .required("Campo obligatorio")
+          .required("Campo obrigatório")
           .matches(
             passwordRegex,
             "Su contraseña debe tener al menos 8 caracteres, incluida una letra mayúscula, una letra minúscula y un número."
@@ -157,8 +157,8 @@ const handleSendEmail = async (values) => {
     confirmPassword: Yup.string().when("newPassword", {
       is: (newPassword) => isResetPasswordButtonClicked && newPassword,
       then: Yup.string()
-        .oneOf([Yup.ref("newPassword"), null], "Las contraseñas no coinciden")
-        .required("Campo obligatorio"),
+        .oneOf([Yup.ref("newPassword"), null], "As senhas não coincidem")
+        .required("Campo obrigatório"),
       otherwise: Yup.string(), // Sem validação se não for redefinição de senha
     }),
   });

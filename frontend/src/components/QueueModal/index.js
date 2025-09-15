@@ -71,10 +71,10 @@ const useStyles = makeStyles((theme) => ({
 
 const QueueSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "¡Demasiado corto!")
-    .max(50, "¡Demasiado largo!")
-    .required("Requerido"),
-  color: Yup.string().min(3, "¡Demasiado corto!").max(9, "¡Demasiado largo!").required(),
+    .min(2, "Muito curto!")
+    .max(50, "Muito longo!")
+    .required("Obrigatório"),
+  color: Yup.string().min(3, "Muito curto!").max(9, "Muito longo!").required(),
   greetingMessage: Yup.string(),
 });
 

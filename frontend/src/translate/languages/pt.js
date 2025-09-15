@@ -26,6 +26,7 @@ const messages = {
         buttons: {
           submit: "Entrar",
           register: "Registre-se, agora mesmo!",
+          forgetPassword: "Esqueceu sua senha?",
         },
       },
       plans: {

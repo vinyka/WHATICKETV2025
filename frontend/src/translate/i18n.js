@@ -7,8 +7,17 @@ i18n.use(LanguageDetector).init({
 	debug: false,
 	defaultNS: ["translations"],
 	fallbackLng: "pt",
+	lng: "pt", // Força o idioma para português
 	ns: ["translations"],
 	resources: messages,
+	detection: {
+		order: ['localStorage'],
+		caches: ['localStorage'],
+		lookupLocalStorage: 'i18nextLng',
+	}
 });
+
+// Força o idioma para português no localStorage
+localStorage.setItem('i18nextLng', 'pt');
 
 export { i18n };

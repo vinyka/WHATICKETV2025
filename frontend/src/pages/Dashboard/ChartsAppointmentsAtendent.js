@@ -348,7 +348,7 @@ const ChartsAppointmentsAtendent = () => {
             Servicio por parte de los asistentes
           </Typography>
           <span style={{ fontSize: 13, color: "#bcbcbc" }}>
-            Descubra qué agentes son los más productivos
+            Descubra quais agentes são os mais produtivos
           </span>
           <Stack
             direction={"row"}

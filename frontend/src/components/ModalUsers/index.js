@@ -206,7 +206,7 @@ const ModalUsers = ({ open, onClose, userId, companyId }) => {
                             required
                           >
                             <MenuItem value="admin">Administrador</MenuItem>
-                            <MenuItem value="user">Agente</MenuItem>
+                            <MenuItem value="user">Usuário</MenuItem>
                           </Field>
                         </>
                       )}

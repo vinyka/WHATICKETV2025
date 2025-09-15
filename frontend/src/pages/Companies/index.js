@@ -138,7 +138,7 @@ const SignUp = () => {
 										variant="outlined"
 										fullWidth
 										id="name"
-										label="Nombre de empresa"
+										label="Nome da empresa"
 									/>
 								</Grid>
 

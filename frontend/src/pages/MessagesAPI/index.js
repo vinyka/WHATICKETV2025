@@ -74,7 +74,7 @@ const MessagesAPI = () => {
           'Authorization': `Bearer ${values.token}`
         }
       })
-      toast.success('Mensaje enviado exitosamente');
+      toast.success('Mensagem enviada com sucesso');
     } catch (err) {
       toastError(err);
     }
@@ -96,7 +96,7 @@ const MessagesAPI = () => {
           'Authorization': `Bearer ${values.token}`
         }
       })
-      toast.success('Mensaje enviado exitosamente');
+      toast.success('Mensagem enviada com sucesso');
     } catch (err) {
       toastError(err);
     }
@@ -258,26 +258,26 @@ const MessagesAPI = () => {
       variant="outlined"
     >
       <Typography variant="h5">
-        Ddocumentación para enviar mensajes
+        Documentação para enviar mensagens
       </Typography>
       <Typography variant="h6" color="primary" className={classes.elementMargin}>
         Métodos de envío
       </Typography>
       <Typography component="div">
         <ol>
-          <li>Mensajes de texto</li>
-          <li>Mensajes de los medios</li>
+          <li>Mensagens de texto</li>
+          <li>Mensagens de mídia</li>
         </ol>
       </Typography>
       <Typography variant="h6" color="primary" className={classes.elementMargin}>
         Instruções
       </Typography>
       <Typography className={classes.elementMargin} component="div">
-        <b>Onotas importantes</b><br />
+        <b>Notas importantes</b><br />
         <ul>
-          <li>Antes de enviar mensajes, debes registrar el token. vinculado a la conexión que enviará los mensajes. <br/>Para registrarse, acceda al menú "Conexiones", haga clic en el botón editar conexión e inserte el token en el campo correspondiente.</li>
+          <li>Antes de enviar mensagens, você deve registrar o token vinculado à conexão que enviará as mensagens. <br/>Para registrar, acesse o menu "Conexões", clique no botão editar conexão e insira o token no campo correspondente.</li>
           <li>
-            El número de envío no debe tener máscara ni caracteres especiales y debe estar compuesto por:
+            O número de envio não deve ter máscara nem caracteres especiais e deve ser composto por:
             <ul>
               <li>Código del país</li>
               <li>Area</li>

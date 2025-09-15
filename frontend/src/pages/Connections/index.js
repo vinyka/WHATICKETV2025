@@ -391,7 +391,7 @@ const renderStatusToolTips = whatsApp => {
 				<Table size="small">
 					<TableHead>
 						<TableRow>
-							<TableCell align="center">{i18n.t("Nombre")}</TableCell>
+							<TableCell align="center">{i18n.t("connections.table.name")}</TableCell>
 							<TableCell align="center">{i18n.t("connections.table.number")}</TableCell>							
 							<TableCell align="center">{i18n.t("connections.table.status")}</TableCell>
 							<Can

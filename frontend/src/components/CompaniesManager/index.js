@@ -203,7 +203,7 @@ export function CompanyForm(props) {
               <Grid xs={12} sm={6} md={4} item>
                 <Field
                   as={TextField}
-                  label="Nombre"
+                  label="Nome"
                   name="name"
                   variant="outlined"
                   className={classes.fullWidth}
@@ -453,7 +453,7 @@ export function CompaniesManagerGrid(props) {
               #
             </TableCell>
 			<TableCell align="left">ID</TableCell>
-            <TableCell align="left">Nombre</TableCell>
+            <TableCell align="left">Nome</TableCell>
             <TableCell align="left">E-mail</TableCell>
             <TableCell align="left">Teléfono</TableCell>
             <TableCell align="left">Plan</TableCell>

@@ -157,7 +157,7 @@ const VCardPreview = ({ contact, numbers }) => {
                     </Grid>
 					<Grid item xs={9}>
                         <Typography style={{ marginLeft: "10px", color: theme.palette.text.vcard }} variant="body2" gutterBottom>
-                            <strong>Nombre:</strong> {selectedContact.name}
+                            <strong>Nome:</strong> {selectedContact.name}
                         </Typography>
                         <Typography style={{ marginLeft: "10px", color: theme.palette.text.vcard }} variant="body2" gutterBottom>
                             <Typography variant="body2" component="span">

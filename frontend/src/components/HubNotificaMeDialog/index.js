@@ -131,7 +131,7 @@ const HubNotificaMeDialog = ({ open, onClose, hubnotificameId, reload }) => {
                                 {/* Campo Nome */}
                                 <Field
                                     as={TextField}
-                                    label="Nombre"
+                                    label="Nome"
                                     name="nome"
                                     error={touched.token && Boolean(errors.token)}
                                     helperText={touched.token && errors.token}

@@ -135,10 +135,10 @@ const HubNotificaMe = () => {
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell align="center">Nombre del canal</TableCell>
+              <TableCell align="center">Nome do canal</TableCell>
               <TableCell align="center">Token del canal - NotificaMe</TableCell>
               <TableCell align="center">Canal</TableCell>
-              <TableCell align="center">Acciones</TableCell>
+              <TableCell align="center">Ações</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

@@ -277,7 +277,7 @@ export default function Options(props) {
       key: "userRating",
       value,
     });
-    toast.success("Operación actualizada exitosamente.");
+    toast.success("Operação atualizada com sucesso.");
     setLoadingUserRating(false);
   }
 
@@ -517,7 +517,7 @@ export default function Options(props) {
       <Grid spacing={3} container>
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="ratings-label">Reseñas</InputLabel>
+            <InputLabel id="ratings-label">Avaliações</InputLabel>
             <Select
               labelId="ratings-label"
               value={userRating}
@@ -536,7 +536,7 @@ export default function Options(props) {
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
             <InputLabel id="schedule-type-label">
-              Gestión de Horarios Comerciales
+              Gestão de Horários Comerciais
             </InputLabel>
             <Select
               labelId="schedule-type-label"
@@ -557,7 +557,7 @@ export default function Options(props) {
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
             <InputLabel id="group-type-label">
-              Ignorar mensajes de grupo
+              Ignorar mensagens de grupo
             </InputLabel>
             <Select
               labelId="group-type-label"
@@ -577,7 +577,7 @@ export default function Options(props) {
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
             <InputLabel id="call-type-label">
-              Aceptar llamada
+              Aceitar chamada
             </InputLabel>
             <Select
               labelId="call-type-label"
@@ -597,7 +597,7 @@ export default function Options(props) {
        <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
             <InputLabel id="chatbot-type-label">
-              Tipo Chatbot
+              Tipo de Chatbot
             </InputLabel>
             <Select
               labelId="chatbot-type-label"
@@ -618,7 +618,7 @@ export default function Options(props) {
 		{/* ENVIAR SAUDAÇÃO AO ACEITAR O TICKET */}
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="sendGreetingAccepted-label">Enviar saludo al aceptar el ticket</InputLabel>
+            <InputLabel id="sendGreetingAccepted-label">Enviar saudação ao aceitar o ticket</InputLabel>
             <Select
               labelId="sendGreetingAccepted-label"
               value={SendGreetingAccepted}
@@ -639,7 +639,7 @@ export default function Options(props) {
 		{/* ENVIAR MENSAGEM DE TRANSFERENCIA DE SETOR/ATENDENTE */}
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="sendMsgTransfTicket-label">Enviar mensaje de transferencia de departamento/agente</InputLabel>
+            <InputLabel id="sendMsgTransfTicket-label">Enviar mensagem de transferência de departamento/agente</InputLabel>
             <Select
               labelId="sendMsgTransfTicket-label"
               value={SettingsTransfTicket}
@@ -659,7 +659,7 @@ export default function Options(props) {
 		{/* ENVIAR SAUDAÇÃO QUANDO HOUVER SOMENTE 1 FILA */}
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
-            <InputLabel id="sendGreetingMessageOneQueues-label">Enviar saludo cuando solo hay 1 departamento</InputLabel>
+            <InputLabel id="sendGreetingMessageOneQueues-label">Enviar saudação quando há apenas 1 departamento</InputLabel>
             <Select
               labelId="sendGreetingMessageOneQueues-label"
               value={sendGreetingMessageOneQueues}
@@ -678,7 +678,7 @@ export default function Options(props) {
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
             <InputLabel id='viewclosed-label'>
-              ¿El Agente ve tickets cerrados?
+              O Agente vê tickets fechados?
             </InputLabel>
             <Select
               labelId='viewclosed-label'
@@ -699,7 +699,7 @@ export default function Options(props) {
         <Grid xs={12} sm={12} md={12} item>
           <FormControl className={classes.selectContainer}>
             <InputLabel id='viewgroups-label'>
-              ¿El Agente ve Grupos?
+              O Agente vê Grupos?
             </InputLabel>
             <Select
               labelId='viewgroups-label'
@@ -743,7 +743,7 @@ export default function Options(props) {
             <Grid xs={12} sm={12} md={12} item>
                 <FormControl className={classes.selectContainer}>
                   <InputLabel id='allowregister-label'>
-                    ¿Se permite el registro (inscripción)?
+                    Permitir registro (inscrição)?
                   </InputLabel>
                   <Select
                     labelId='allowregister-label'
@@ -764,7 +764,7 @@ export default function Options(props) {
 				  <Grid xs={12} sm={12} md={12} item>
                 <FormControl className={classes.selectContainer}>
                   <InputLabel id='viewregister-label'>
-                    ¿Registro (Inscripción) Visible?
+                    Registro (Inscrição) Visível?
                   </InputLabel>
                   <Select
                     labelId='viewregister-label'
@@ -784,7 +784,7 @@ export default function Options(props) {
 			  
 			                <Grid xs={12} sm={12} md={12} item>
                 <FormControl className={classes.selectContainer}>
-                  <InputLabel id='trial-label'>¿Tiempo de prueba?</InputLabel>
+                  <InputLabel id='trial-label'>Tempo de teste?</InputLabel>
                   <Select
                     labelId='trial-label'
                     value={trial}

@@ -348,7 +348,7 @@ export default function Whitelabel(props) {
           <FormControl className={classes.selectContainer}>
             <TextField
               id="appname-field"
-              label="Nombre del sistema"
+              label="Nome do sistema"
               variant="standard"
               name="appName"
               value={appName}

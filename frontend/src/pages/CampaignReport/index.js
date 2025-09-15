@@ -168,7 +168,7 @@ const CampaignReport = () => {
           <Grid xs={12} md={4} item>
             <CardCounter
               icon={<GroupIcon fontSize="inherit" />}
-              title="Contactos válidos"
+              title="Contatos válidos"
               value={validContacts}
               loading={loading}
             />
@@ -215,7 +215,7 @@ const CampaignReport = () => {
             <Grid xs={12} md={4} item>
               <CardCounter
                 icon={<ListAltIcon fontSize="inherit" />}
-                title="Lista de contactos"
+                title="Lista de contatos"
                 value={campaign.contactList.name}
                 loading={loading}
               />

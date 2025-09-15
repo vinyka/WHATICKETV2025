@@ -1,23 +1,25 @@
 import i18n from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
 
 import { messages } from "./languages";
 
-i18n.use(LanguageDetector).init({
+// Força o idioma para português no localStorage antes de inicializar
+localStorage.setItem('i18nextLng', 'pt');
+
+i18n.init({
 	debug: false,
 	defaultNS: ["translations"],
 	fallbackLng: "pt",
 	lng: "pt", // Força o idioma para português
 	ns: ["translations"],
 	resources: messages,
-	detection: {
-		order: ['localStorage'],
-		caches: ['localStorage'],
-		lookupLocalStorage: 'i18nextLng',
+	interpolation: {
+		escapeValue: false
 	}
 });
 
-// Força o idioma para português no localStorage
-localStorage.setItem('i18nextLng', 'pt');
+// Log para verificar se as mensagens estão carregadas corretamente
+console.log('i18n initialized with language:', i18n.language);
+console.log('Available resources:', Object.keys(messages));
+console.log('Portuguese messages loaded:', !!messages.pt);
 
 export { i18n };

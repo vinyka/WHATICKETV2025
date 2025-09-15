@@ -447,7 +447,7 @@ const messages = {
             closed: "Fechado",
             pending: "Pendente",
           },
-          filterUsers: "Filtro por Usuarios",
+          filterUsers: "Filtro por Usuários",
           ticketsPerPage: "Tickets por página"
         },
         buttons: {

@@ -67,11 +67,11 @@ const useStyles = makeStyles(theme => ({
 
 const UserSchema = Yup.object().shape({
 	name: Yup.string()
-		.min(2, "¡Demasiado corto!")
-		.max(50, "¡Demasiado largo!")
-		.required("Requerido"),
-	password: Yup.string().min(5, "¡Demasiado corto!").max(50, "¡Demasiado largo!"),
-	email: Yup.string().email("Invalid email").required("Requerido"),
+		.min(2, "Muito curto!")
+		.max(50, "Muito longo!")
+		.required("Obrigatório"),
+	password: Yup.string().min(5, "Muito curto!").max(50, "Muito longo!"),
+	email: Yup.string().email("Email inválido").required("Obrigatório"),
 });
 
 const SignUp = () => {
@@ -101,7 +101,7 @@ const SignUp = () => {
             const allowtrialX = responsevvv.data.value;
             settrial(allowtrialX);
         } catch (error) {
-            console.error('Error al recuperar la versión de prueba', error);
+            console.error('Erro ao recuperar a versão de teste', error);
         }
     };
 
@@ -111,7 +111,7 @@ const SignUp = () => {
             const allowregisterX = responsevv.data.value;
             setallowregister(allowregisterX);
         } catch (error) {
-            console.error('Error al recuperar allowregister', error);
+            console.error('Erro ao recuperar allowregister', error);
         }
     };
 
@@ -186,7 +186,7 @@ const SignUp = () => {
 										variant="outlined"
 										fullWidth
 										id="name"
-										label="nombre de empresa"
+										label={i18n.t("signup.form.name")}
 									/>
 								</Grid>
 
@@ -247,7 +247,7 @@ const SignUp = () => {
 								</Grid>
 
 								<Grid item xs={12}>
-									<InputLabel htmlFor="plan-selection">Plan</InputLabel>
+									<InputLabel htmlFor="plan-selection">Plano</InputLabel>
 									<Field
 										as={Select}
 										variant="outlined"
@@ -258,7 +258,7 @@ const SignUp = () => {
 										required
 									>
                                         <MenuItem value="disabled" disabled>
-                                        	<em>Seleccione su plan de suscripción</em>
+                                        	<em>Selecione seu plano de assinatura</em>
 										</MenuItem>
 										{plans.map((plan, key) => (
 											<MenuItem key={key} value={plan.id}>

@@ -94,10 +94,9 @@ const App = () => {
 
     useEffect(() => {
         const i18nlocale = localStorage.getItem("i18nextLng");
-        const browserLocale =
-            i18nlocale.substring(0, 2) + i18nlocale.substring(3, 5);
-
-        if (browserLocale === "ptBR") {
+        
+        // Sempre define o locale como português brasileiro
+        if (i18nlocale === "pt" || i18nlocale === "pt-BR" || !i18nlocale) {
             setLocale(ptBR);
         }
     }, []);

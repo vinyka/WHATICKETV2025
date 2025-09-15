@@ -83,8 +83,16 @@
     <noscript>Você precisa habilitar o JavaScript para executar este aplicativo.</noscript>
 
     <script>
-        // Força o idioma para português
+        // Limpa qualquer configuração de idioma anterior e força português
+        localStorage.removeItem('i18nextLng');
+        localStorage.removeItem('language');
+        localStorage.removeItem('locale');
+        localStorage.removeItem('i18next');
         localStorage.setItem('i18nextLng', 'pt');
+        
+        // Força o idioma no sessionStorage também
+        sessionStorage.removeItem('i18nextLng');
+        sessionStorage.setItem('i18nextLng', 'pt');
 
         let progress = 0;
         const progressBar = document.getElementById('progress-bar');
